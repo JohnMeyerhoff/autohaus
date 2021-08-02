@@ -12,7 +12,6 @@ public class App {
         Fahrzeug blauerOpel = new Auto("BN FN 2");
         ph.einparken(blauerOpel);
         ph.printFreiePlaetze();
-        
     }
 
     //Struktur
@@ -35,9 +34,23 @@ public class App {
     // +-+ = HatBehindertenAusweis
     //(Parkdauer) Park-Start-Zeit
 
-
     //Fahrzeug Parken
     //Freie Plätze anzeigen
     //Kosten anzeigen
     //Fahzeug (AusParken)
+
+    //Uebungen:
+    //Tests schreiben, wird der richtige fehler gegeben wenn ein parkdeck voll ist?
+
+
+    //Parkhausausgabe via Iterator PD01 Tostring usw
+    //Parkdeckausgabe via Iterator Parkplatz07 Tostring
+    //Parkplatzausgabe via Kennzeichen Tostring + Kosten Tostring
+
+
+    // Deck 0:
+    // {"BN LO 87", 5.75 Eur},{ "SU WG 50", 17.00 Eur}
+    // Deck 1:
+    // {"BN LO 87", 5.75 Eur},{ null, 0.00 Eur}
+    
 }
