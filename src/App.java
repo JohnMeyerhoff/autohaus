@@ -53,4 +53,6 @@ public class App {
     // Deck 1:
     // {"BN LO 87", 5.75 Eur},{ null, 0.00 Eur}
     
+
+    //Instanceof beim Einparken testen
 }
