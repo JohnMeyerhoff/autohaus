@@ -1,10 +1,11 @@
 public class App {
+    
     public static void main(String[] args) {
         System.out.println("Hello, World!");
-        Parkdeck pd01 = new Parkdeck();
-        Parkdeck pd02 = new Parkdeck();
-        Parkdeck pd03 = new Parkdeck();
-        Parkdeck[] haus =  new Parkdeck[3];
+        Parkdeck<Fahrzeug> pd01 = new Parkdeck<>();
+        Parkdeck<Fahrzeug> pd02 = new Parkdeck<>();
+        Parkdeck<Fahrzeug> pd03 = new Parkdeck<>();
+        Parkdeck<Fahrzeug>[] haus =  (Parkdeck<Fahrzeug>[]) new Parkdeck[3];
         haus[0]= pd01;
         haus[1]= pd02;
         haus[2]= pd03;
