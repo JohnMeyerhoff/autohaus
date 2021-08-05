@@ -21,9 +21,6 @@ public class Parkdeck<T extends Fahrzeug> {
     int capacity = 30;
     int size = 0;
 
-
-    int kosten = 0;
-
     Parkdeck(){
         this.parkflaeche = new Parkplatz[30];
     }
@@ -32,10 +29,19 @@ public class Parkdeck<T extends Fahrzeug> {
             return false;
         }
         this.parkflaeche[size] = new Parkplatz();
-        this.parkflaeche[size++].einparken(einparker);
+        this.parkflaeche[size].einparken(einparker);
+        size++;
         return true;
     }
     public String getFreiePlaetze() {
         return " Freie Plaetze: "+ (capacity-size);
+    }
+    public String toString(){
+        String result = " freie Parkplaetze: "+(capacity-size);
+        result += "\n belegte Parkplaetze: ";
+       for(int i = 0; i < size;i++){ //die size ist max 30
+            result += "\n" + parkflaeche[i].toString();
+       }
+       return result;
     }
 }

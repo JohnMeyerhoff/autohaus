@@ -1,8 +1,8 @@
 public class App {
     
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-        Parkdeck<Fahrzeug> pd01 = new Parkdeck<>();
+        //System.out.println("Hello, World!");
+        Parkdeck<Fahrzeug> pd01 = new Parkdeck<>(); //je 30 plätze
         Parkdeck<Fahrzeug> pd02 = new Parkdeck<>();
         Parkdeck<Fahrzeug> pd03 = new Parkdeck<>();
         Parkdeck<Fahrzeug>[] haus =  (Parkdeck<Fahrzeug>[]) new Parkdeck[3];
@@ -12,7 +12,9 @@ public class App {
         Parkhaus ph = new Parkhaus(haus);
         Fahrzeug blauerOpel = new Auto("BN FN 2");
         ph.einparken(blauerOpel);
-        ph.printFreiePlaetze();
+       // ph.printFreiePlaetze();
+        System.out.println(ph);
+        
     }
 
     //Struktur
