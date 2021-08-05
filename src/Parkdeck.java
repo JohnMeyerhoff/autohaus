@@ -2,7 +2,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Parkdeck<T extends Fahrzeug> implements Iterable<T>{
+public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     /* Frage: Warum ist das Parkdeck hier generisch?
     Wenn die Begründung für die generische Implementierung der Klasse 
     Parkdeck lautet "damit alle Fahrzeuge einparken dürfen" MUSS der typ T 
@@ -49,10 +49,10 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<T>{
        return result;
     }
     @Override
-    public Iterator<T> iterator() {
+    public Iterator<Parkplatz> iterator() {
         return new ParkdeckIterierbar();
     }
-    class ParkdeckIterierbar implements Iterator<T>{
+    class ParkdeckIterierbar implements Iterator<Parkplatz>{
         int bookmark = 0; 
         @Override
         public boolean hasNext() {
@@ -63,11 +63,11 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<T>{
         }
 
         @Override
-        public T next() {
+        public Parkplatz next() {
             if(!hasNext()){
                 throw new NoSuchElementException("Es gibt nix mehr.");
             }
-            return parkflaeche[bookmark++];
+            return  parkflaeche[bookmark++];
         }
         
     }
