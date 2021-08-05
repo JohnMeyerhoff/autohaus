@@ -34,13 +34,13 @@ public class Parkdeck<T extends Fahrzeug> {
         return true;
     }
     public String getFreiePlaetze() {
-        return " Freie Plaetze: "+ (capacity-size);
+        return "Freie Plaetze: "+ (capacity-size);
     }
     public String toString(){
-        String result = " freie Parkplaetze: "+(capacity-size);
+        String result = getFreiePlaetze();
         result += "\n belegte Parkplaetze: ";
        for(int i = 0; i < size;i++){ //die size ist max 30
-            result += "\n" + parkflaeche[i].toString();
+            result += "\n"+i+" " + parkflaeche[i].toString();
        }
        return result;
     }

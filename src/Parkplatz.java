@@ -26,6 +26,6 @@ public class Parkplatz {
         return this.kosten;
     }
     public String toString(){
-        return "[Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen+ ", " + kosten + " Euro]";
+        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen+ ", " + kosten + " Euro";
     }
 }

@@ -13,6 +13,7 @@ public class App {
         Fahrzeug blauerOpel = new Auto("BN FN 2");
         ph.einparken(blauerOpel);
        // ph.printFreiePlaetze();
+        System.out.println("Parkhaus 1:");
         System.out.println(ph);
         
     }
