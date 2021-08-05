@@ -67,7 +67,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<T>{
             if(!hasNext()){
                 throw new NoSuchElementException("Es gibt nix mehr.");
             }
-            return bookmark;
+            return parkflaeche[bookmark++];
         }
         
     }
