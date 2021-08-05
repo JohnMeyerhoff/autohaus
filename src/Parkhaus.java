@@ -12,7 +12,6 @@ public class Parkhaus {
         if(this.gebaeude[0]== null){
             System.out.println("fehler");
         }
-        System.out.println(Arrays.toString(this.gebaeude));
         return this.gebaeude[0].einparken(einparker);
     }
 

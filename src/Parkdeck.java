@@ -38,7 +38,7 @@ public class Parkdeck<T extends Fahrzeug> {
     }
     public String toString(){
         String result = getFreiePlaetze();
-        result += "\n belegte Parkplaetze: ";
+        result += "\nbelegte Parkplaetze: ";
        for(int i = 0; i < size;i++){ //die size ist max 30
             result += "\n"+i+" " + parkflaeche[i].toString();
        }
