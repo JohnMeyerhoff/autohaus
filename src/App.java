@@ -11,14 +11,13 @@ public class App {
         haus[2] = pd03;
         Parkhaus ph = new Parkhaus(haus);
         Fahrzeug blauerOpel = new Auto("BN FN 2");
-        System.out.println(ph.woIstFahrzeug(blauerOpel));
+        ph.woIstFahrzeug(blauerOpel);
 
         ph.einparken(blauerOpel);
         // ph.printFreiePlaetze();
         System.out.println("Parkhaus 1:");
         System.out.println(ph);
-
-        System.out.println(ph.woIstFahrzeug(blauerOpel));
+        ph.woIstFahrzeug(blauerOpel);
 
     }
 

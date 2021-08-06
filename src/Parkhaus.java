@@ -31,6 +31,7 @@ public class Parkhaus {
             erg = gebaeude[i].fahrzeugSuche(a);
             if (erg != -1) {
                 System.out.println("Parkdeck: " + i);
+                System.out.println("Platznummer: " + erg);
                 return erg;
             }
         }
