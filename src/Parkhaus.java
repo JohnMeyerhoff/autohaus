@@ -27,7 +27,6 @@ public class Parkhaus {
 
     public int woIstFahrzeug(Fahrzeug a) {
         int erg = -1;
-
         for (int i = 0; i < gebaeude.length; i++) {
             erg = gebaeude[i].fahrzeugSuche(a);
             if (erg != -1) {
@@ -35,7 +34,7 @@ public class Parkhaus {
                 return erg;
             }
         }
-
+        System.out.println("Leider haben wir Ihr Auto nicht gefunden.");
         return erg;// Hier -1
     }
 
