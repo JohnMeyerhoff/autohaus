@@ -30,12 +30,13 @@ public class Parkhaus {
         for (int i = 0; i < gebaeude.length; i++) {
             erg = gebaeude[i].fahrzeugSuche(a);
             if (erg != -1) {
+                System.out.println("Ihr Auto mit Kennzeichen "+a.kennzeichen+" gefunden:");
                 System.out.println("Parkdeck: " + i);
                 System.out.println("Platznummer: " + erg);
                 return erg;
             }
         }
-        System.out.println("Leider haben wir Ihr Auto nicht gefunden.");
+        System.out.println("Leider haben wir Ihr Auto mit Kennzeichen "+a.kennzeichen+" nicht gefunden.");
         return erg;// Hier -1
     }
 
