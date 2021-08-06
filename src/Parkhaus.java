@@ -19,6 +19,9 @@ public class Parkhaus {
            kennzeichenSuche(anders.kennzeichen);
        }
     }
+    private void kennzeichenSuche(String kennzeichen) {
+    }
+
     public void printFreiePlaetze() {
         for(Parkdeck<Fahrzeug> a : gebaeude){
             System.out.println(a.getFreiePlaetze());
