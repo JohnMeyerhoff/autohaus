@@ -1,4 +1,6 @@
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.NoSuchElementException;
 
 
 public class Parkhaus {
@@ -21,6 +23,20 @@ public class Parkhaus {
           }
         }
         return false;
+    }
+    public int woIstFahrzeug(Fahrzeug a) throws NoSuchAlgorithmException{
+        int erg = 0;
+        if(!istEingeparkt(a)){
+            throw new NoSuchAlgorithmException("Das Auto steht nicht im Fahrzeug.");
+        }else{
+            for (int i = 0; i < gebaeude.length;) {
+                erg = gebaeude[i].fahrzeugSuche(a);
+                if(erg == -1){
+                   i++;
+                }
+              }
+        }
+        return erg;
     }
 
     public void printFreiePlaetze() {
