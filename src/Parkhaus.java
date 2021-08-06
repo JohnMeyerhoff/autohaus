@@ -16,9 +16,11 @@ public class Parkhaus {
     }
     public boolean kennzeichenSuche(Fahrzeug anders){
        for (int i = 0; i < gebaeude.length; i++) {
-           gebaeude[i].kennzeichenSuche(anders.kennzeichen);
-       }
-       return false;
+          if(gebaeude[i].kennzeichenSuche(anders.kennzeichen)){
+            return true;
+          }
+        }
+        return false;
     }
 
     public void printFreiePlaetze() {
