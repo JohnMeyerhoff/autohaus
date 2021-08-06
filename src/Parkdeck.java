@@ -57,8 +57,8 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
             if(k.equals(parkflaeche[i].belegtDurchFahrzeug.kennzeichen)){
                 return true;
             }
-            return false;
         }
+        return false;
     }
     @Override
     public Iterator<Parkplatz> iterator() {

@@ -15,8 +15,8 @@ public class Parkhaus {
         return this.gebaeude[0].einparken(einparker);
     }
     public boolean kennzeichenSuche(){
-       for (Parkdeck<Fahrzeug> parkdeck : gebaeude) {
-           parkdeck.kennzeichenSuche();
+       for (int i = 0; i < gebaeude.length; i++) {
+           parkdeck.kennzeichenSuche(gebaeude[i].);
        }
     }
     public void printFreiePlaetze() {
