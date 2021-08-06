@@ -29,10 +29,11 @@ public class Parkhaus {
         if(!istEingeparkt(a)){
             throw new NoSuchElementException("Das Auto steht nicht im Parkhaus.");
         }else{
-            for (int i = 0; i < gebaeude.length;) {
+            for (int i = 0; i < gebaeude.length;i++) {
                 erg = gebaeude[i].fahrzeugSuche(a);
-                if(erg == -1){
-                   i++;
+                if(erg != -1){
+                    System.out.println(i);
+                   return erg;
                 }
               }
         }
