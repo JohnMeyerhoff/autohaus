@@ -14,7 +14,7 @@ public class Parkhaus {
         }
         return this.gebaeude[0].einparken(einparker);
     }
-    public boolean kennzeichenSuche(Fahrzeug anders){
+    public boolean istEingeparkt(Fahrzeug anders){
        for (int i = 0; i < gebaeude.length; i++) {
           if(gebaeude[i].kennzeichenSuche(anders.kennzeichen)){
             return true;
