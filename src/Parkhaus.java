@@ -32,7 +32,7 @@ public class Parkhaus {
             for (int i = 0; i < gebaeude.length;i++) {
                 erg = gebaeude[i].fahrzeugSuche(a);
                 if(erg != -1){
-                    System.out.println(i);
+                   System.out.println(i);
                    return erg;
                 }
               }

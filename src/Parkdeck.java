@@ -66,6 +66,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         for(int i = 0; (gefunden ==-1) && (i < size); i++){
             if((b.kennzeichen.equals(parkflaeche[i].belegtDurchFahrzeug.kennzeichen))){
                 return i;
+                
             }
         }
         return gefunden;
