@@ -47,6 +47,11 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
        }
        return result;
     }
+    public boolean kennzeichenSuche(){
+        if(size == 0){
+            throw new IllegalArgumentException("Das Parkdeck ist nicht belegt.");
+        }
+    }
     @Override
     public Iterator<Parkplatz> iterator() {
         return new ParkdeckIterierbar();
