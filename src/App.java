@@ -19,8 +19,7 @@ public class App {
 
             System.out.println(ph.woIstFahrzeug(blauerOpel));
         }catch(Exception e){
-            System.out.println("e");
-        }
+            System.out.println("e"); }
     }
 
     //Struktur
