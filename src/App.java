@@ -15,7 +15,12 @@ public class App {
        // ph.printFreiePlaetze();
         System.out.println("Parkhaus 1:");
         System.out.println(ph);
-        
+        try{
+
+            System.out.println(ph.woIstFahrzeug(blauerOpel));
+        }catch(Exception e){
+            System.out.println("e");
+        }
     }
 
     //Struktur
