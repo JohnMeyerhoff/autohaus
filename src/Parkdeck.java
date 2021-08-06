@@ -49,6 +49,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     }
     public boolean kennzeichenSuche(String k){
         Iterator<Parkplatz> a;
+        a = new ParkdeckIterierbar();
         if(size == 0){
             throw new IllegalArgumentException("Das Parkdeck ist nicht belegt.");
         }
