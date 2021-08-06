@@ -27,7 +27,7 @@ public class Parkhaus {
     public int woIstFahrzeug(Fahrzeug a) throws NoSuchAlgorithmException{
         int erg = 0;
         if(!istEingeparkt(a)){
-            throw new NoSuchAlgorithmException("Das Auto steht nicht im Parkhaus.");
+            throw new NoSuchElementException("Das Auto steht nicht im Parkhaus.");
         }else{
             for (int i = 0; i < gebaeude.length;) {
                 erg = gebaeude[i].fahrzeugSuche(a);
