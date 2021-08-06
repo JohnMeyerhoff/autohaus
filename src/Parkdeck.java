@@ -1,4 +1,3 @@
-import java.security.NoSuchAlgorithmException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -43,6 +42,9 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     public String toString(){
         String result = getFreiePlaetze();
         result += "\nbelegte Parkplaetze: ";
+        if(size == 0){
+            result += "0";
+        }
        for(int i = 0; i < size;i++){ //die size ist max 30
             result += "\n"+i+" " + parkflaeche[i].toString();
        }
