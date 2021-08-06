@@ -16,7 +16,7 @@ public class Parkhaus {
     }
     public boolean kennzeichenSuche(){
        for (int i = 0; i < gebaeude.length; i++) {
-           parkdeck.kennzeichenSuche(gebaeude[i].);
+           kennzeichenSuche(gebaeude[i].p);
        }
     }
     public void printFreiePlaetze() {
