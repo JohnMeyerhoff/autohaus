@@ -59,7 +59,7 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
 
     public String toString() {
         StringBuilder bld = new StringBuilder();
-        for (Parkdeck<Fahrzeug> pd : gebaeude) {
+        for (Parkdeck<Fahrzeug> pd : this) {
             bld.append(pd.toString() + "\n");
         }
         return bld.toString();
@@ -76,10 +76,10 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
 
         @Override
         public boolean hasNext() {
-            if (bookmark > size) {
-                return false;
+            if (bookmark < size) {
+                return true;
             }
-            return true;
+            return false;
         }
 
         @Override
