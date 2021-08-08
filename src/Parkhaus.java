@@ -59,8 +59,8 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
 
     public String toString() {
         String ausgabe = "";
-        for (Parkdeck<Fahrzeug> parkdeck : gebaeude) {
-            ausgabe += gebaeude.toString() + "\n";
+        for (Parkdeck<Fahrzeug> pd : gebaeude) {
+            ausgabe += pd.toString() + "\n";
         }
         return ausgabe;
        // return gebaeude[0].toString() + "\n" + gebaeude[1].toString() + "\n" + gebaeude[2].toString();
