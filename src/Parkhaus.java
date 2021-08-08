@@ -49,11 +49,10 @@ public class Parkhaus implements Iterable<Parkdeck> {
     }
 
     @Override
-    public Iterator<Parkdeck> iterator() {
-        
+    public Iterator<Parkdeck<Fahrzeug>> iterator() {
         return new Ebeneniterator();
     }
-    public class Ebeneniterator implements Iterator<Pardeck>{
+    public class Ebeneniterator implements Iterator<Parkdeck<Fahrzeug>>{
         int bookmark = 0;
 
         @Override
@@ -63,7 +62,7 @@ public class Parkhaus implements Iterable<Parkdeck> {
         }
 
         @Override
-        public Pardeck next() {
+        public Parkdeck<Fahrzeug> next() {
             // TODO Auto-generated method stub
             return null;
         }
