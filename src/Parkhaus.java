@@ -8,6 +8,7 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
         this.gebaeude = haus;
         size = gebaeude.length;
     }
+
     Parkhaus(Parkdeck<Fahrzeug>[] haus, int s) {
         this.gebaeude = haus;
         this.size = s;
@@ -34,13 +35,13 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
         for (int i = 0; i < gebaeude.length; i++) {
             erg = gebaeude[i].fahrzeugSuche(a);
             if (erg != -1) {
-                System.out.println("Ihr Auto mit Kennzeichen "+a.kennzeichen+" gefunden:");
+                System.out.println("Ihr Auto mit Kennzeichen " + a.kennzeichen + " gefunden:");
                 System.out.println("Parkdeck: " + i);
                 System.out.println("Platznummer: " + erg);
                 return erg;
             }
         }
-        System.out.println("Leider haben wir Ihr Auto mit Kennzeichen "+a.kennzeichen+" nicht gefunden.");
+        System.out.println("Leider haben wir Ihr Auto mit Kennzeichen " + a.kennzeichen + " nicht gefunden.");
         return erg;// Hier -1
     }
 
@@ -58,14 +59,16 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
     public Iterator<Parkdeck<Fahrzeug>> iterator() {
         return new Ebeneniterator();
     }
-    public class Ebeneniterator implements Iterator<Parkdeck<Fahrzeug>>{
+
+    public class Ebeneniterator implements Iterator<Parkdeck<Fahrzeug>> {
         int bookmark = 0;
 
         @Override
         public boolean hasNext() {
-            if(gebaeude[bookmark] <= gebaeude[size]){
-
+            if (bookmark <= size) {
+                return true;
             }
+            return false;
         }
 
         @Override
