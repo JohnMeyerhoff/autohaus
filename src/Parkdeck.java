@@ -40,11 +40,21 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         return "Freie Plaetze: "+ (capacity-size);
     }
     public String toString(){
-        String result = getFreiePlaetze();
+       /* String result = getFreiePlaetze();
         result += "\nbelegte Parkplaetze: "+ size;
        for(int i = 0; i < size;i++){ //die size ist max 30
             result += "\n"+i+" " + parkflaeche[i].toString();
        }
+       return result;*/
+       String result = getFreiePlaetze();
+        result += "\nbelegte Parkplaetze: "+ size;
+        for (Parkplatz parkplatz : parkflaeche) {
+            result += "\n"+parkplatz.toString()+" ";
+            
+        }
+      
+           
+       
        return result;
     }
     public boolean kennzeichenSuche(String k){
