@@ -1,10 +1,16 @@
 import java.util.Iterator;
 
-public class Parkhaus implements Iterable<Parkdeck> {
+public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
     Parkdeck<Fahrzeug>[] gebaeude;
+    int size = 0;
 
     Parkhaus(Parkdeck<Fahrzeug>[] haus) {
         this.gebaeude = haus;
+        size = gebaeude.length;
+    }
+    Parkhaus(Parkdeck<Fahrzeug>[] haus, int s) {
+        this.gebaeude = haus;
+        this.size = s;
     }
 
     public boolean einparken(Fahrzeug einparker) {
@@ -57,8 +63,9 @@ public class Parkhaus implements Iterable<Parkdeck> {
 
         @Override
         public boolean hasNext() {
-            // TODO Auto-generated method stub
-            return false;
+            if(gebaeude[bookmark] <= gebaeude[size]){
+
+            }
         }
 
         @Override
