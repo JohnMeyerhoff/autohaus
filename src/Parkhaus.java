@@ -3,7 +3,7 @@ import java.util.NoSuchElementException;
 
 public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
     Parkdeck<Fahrzeug>[] gebaeude;
-    int size = 0;
+    int size = 0; //wie viele Etagen gibt es?
 
     Parkhaus(Parkdeck<Fahrzeug>[] haus) {
         this.gebaeude = haus;
