@@ -52,9 +52,6 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
             result += "\n"+ x.toString();
             
         }
-      
-           
-       
        return result;
     }
     public boolean kennzeichenSuche(String k){
