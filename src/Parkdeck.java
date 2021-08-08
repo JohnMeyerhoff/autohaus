@@ -88,7 +88,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         int bookmark = 0; 
         @Override
         public boolean hasNext() {
-            if(bookmark < size){
+            if(bookmark > size){
                 return false;
             }
             return true;
