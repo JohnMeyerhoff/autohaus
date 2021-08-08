@@ -10,9 +10,14 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
         size = gebaeude.length;
     }
 
-    Parkhaus(Parkdeck<Fahrzeug>[] haus, int s) {
+    /**
+     * 
+     * @param haus Parkdeckarray
+     * @param fuellstand Beschreibt wie weit der Parkdeckarray gefüllt ist.
+     */
+    Parkhaus(Parkdeck<Fahrzeug>[] haus, int fuellstand) {
         this.gebaeude = haus;
-        this.size = s;
+        this.size = fuellstand;
     }
 
     public boolean einparken(Fahrzeug einparker) {
