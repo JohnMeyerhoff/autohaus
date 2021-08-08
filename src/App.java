@@ -6,17 +6,26 @@ public class App {
         Parkdeck<Fahrzeug> pd02 = new Parkdeck<>();
         Parkdeck<Fahrzeug> pd03 = new Parkdeck<>();
         Parkdeck<Fahrzeug>[] haus = (Parkdeck<Fahrzeug>[]) new Parkdeck[3];
+        Parkdeck<Fahrzeug>[] etage = (Parkdeck<Fahrzeug>[]) new Parkdeck[5];
         haus[0] = pd01;
         haus[1] = pd02;
         haus[2] = pd03;
         Parkhaus ph = new Parkhaus(haus);
+        etage[0] = pd01;
+        etage[1] = pd02;
+        etage[2] = pd03;
+        etage[3] = pd01;
+        etage[4] = pd02;
+        Parkhaus ph1 = new Parkhaus(etage);
         Fahrzeug blauerOpel = new Auto("BN FN 2");
+        Fahrzeug moped = new Zweirad("MS KG 3");
         ph.woIstFahrzeug(blauerOpel);
-
         ph.einparken(blauerOpel);
+        ph1.einparken(moped);
         // ph.printFreiePlaetze();
         System.out.println("Parkhaus 1:");
         System.out.println(ph);
+        //System.out.println(ph1);
         ph.woIstFahrzeug(blauerOpel);
 
     }
@@ -58,4 +67,7 @@ public class App {
     // {"BN LO 87", 5.75 Eur},{ null, 0.00 Eur}
 
     // Instanceof beim Einparken testen
+
+    //forEach einbinden
+    // - iteriere über das Gebäude und dann über die Parkflächen
 }
