@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
     Parkdeck<Fahrzeug>[] gebaeude;
@@ -73,8 +74,10 @@ public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
 
         @Override
         public Parkdeck<Fahrzeug> next() {
-            // TODO Auto-generated method stub
-            return null;
+           if(!hasNext()){
+                throw new NoSuchElementException("Es gibt gar nix nächstes.");
+           }
+            return gebaeude[bookmark++];
         }
 
     }
