@@ -1,8 +1,6 @@
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.NoSuchElementException;
+import java.util.Iterator;
 
-public class Parkhaus {
+public class Parkhaus implements Iterable<Parkdeck> {
     Parkdeck<Fahrzeug>[] gebaeude;
 
     Parkhaus(Parkdeck<Fahrzeug>[] haus) {
@@ -48,5 +46,27 @@ public class Parkhaus {
 
     public String toString() {
         return gebaeude[0].toString() + "\n" + gebaeude[1].toString() + "\n" + gebaeude[2].toString();
+    }
+
+    @Override
+    public Iterator<Parkdeck> iterator() {
+        
+        return new Ebeneniterator();
+    }
+    public class Ebeneniterator implements Iterator<Pardeck>{
+        int bookmark = 0;
+
+        @Override
+        public boolean hasNext() {
+            // TODO Auto-generated method stub
+            return false;
+        }
+
+        @Override
+        public Pardeck next() {
+            // TODO Auto-generated method stub
+            return null;
+        }
+
     }
 }

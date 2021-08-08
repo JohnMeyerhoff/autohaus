@@ -70,4 +70,5 @@ public class App {
 
     //forEach einbinden
     // - iteriere über das Gebäude und dann über die Parkflächen
+    
 }
