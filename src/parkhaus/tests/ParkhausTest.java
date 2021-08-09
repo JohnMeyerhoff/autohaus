@@ -18,7 +18,7 @@ public class ParkhausTest {
 
    @BeforeEach
    void before(){
-    gebaeude = (Parkdeck<Auto>[]) new Object[5];
+    gebaeude = (Parkdeck<Auto>[]) new Parkdeck[5];
    } 
 
    @AfterEach
