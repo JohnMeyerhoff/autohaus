@@ -64,6 +64,9 @@ public class ParkhausTest {
     }
     //TODO 
     /*
+    Es könnte sein, dass einparken und ausparken wie folgt implementiert sind:
+    einparken : return true
+    istEingeparkt: return true
     Dieser Test muss verifiziert werden, durch zwei andere Tests.
     Es muss geprüft werden, ob nach dem einparken der Autos die Funktion istEingeparkt
     korrekt funktioniert. D.h.: Sie gibt False zurück für nicht Eingeparkte autos.
