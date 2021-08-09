@@ -13,10 +13,11 @@ import parkhaus.Zweirad;
 public class ParkhausTest {
     Parkdeck<Auto> pd01 = new Parkdeck<>();
     Parkdeck<Auto>[] gebaeude = (Parkdeck<Auto>[]) new Object[5];
-
+    
+   @SuppressWarnings("unchecked")
    @BeforeEach
    void before(){
-    Parkhaus<Auto> erstes = new Parkhaus<>(gebaeude);
+    Parkdeck<Auto>[] gebaeude = (Parkdeck<Auto>[]) new Object[5];
    } 
 
    @AfterEach
