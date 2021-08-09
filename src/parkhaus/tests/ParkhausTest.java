@@ -1,13 +1,22 @@
 package parkhaus.tests;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import parkhaus.*; //Specify?
+
+import parkhaus.Auto;
+import parkhaus.Fahrzeug;
+import parkhaus.Parkdeck;
+import parkhaus.Parkhaus;
+
 public class ParkhausTest {
+    Parkdeck<Auto>[] etage;
+
    @BeforeEach
    void before(){
-    
+    Parkhaus<Auto> erstes = new Parkhaus<>(etage);
    } 
+
    @AfterEach
    void after(){
 
@@ -18,7 +27,8 @@ public class ParkhausTest {
 
     @Test
     public void einfach(){
-    Parkdeck<Fahrzeug> etage = new Parkdeck<Fahrzeug>();
-    Parkhaus<Fahrzeug> erstes = new Parkhaus<Fahrzeug>(etage);
+    
     }
 }
+
+
