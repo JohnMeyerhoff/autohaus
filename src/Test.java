@@ -5,7 +5,7 @@ public class Test {
    @BeforeEach
    void before(){
     Parkdeck<Fahrzeug> etage = new Parkdeck<>();
-    Parkhaus erstes = new Parkhaus<>(haus);
+    Parkhaus<Fahrzeug> erstes = new Parkhaus<>(etage);
    } 
    @AfterEach
    void after(){
