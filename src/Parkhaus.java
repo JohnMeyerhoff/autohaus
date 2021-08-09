@@ -77,7 +77,10 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
 
         @Override
         public boolean hasNext() {
-            return (bookmark < size);
+            if (bookmark < size) {
+                return true;
+            }
+            return false;
         }
 
         @Override
