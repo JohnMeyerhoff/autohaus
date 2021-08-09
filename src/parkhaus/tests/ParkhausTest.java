@@ -9,15 +9,16 @@ import parkhaus.Fahrzeug;
 import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
 import parkhaus.Zweirad;
+@SuppressWarnings("unchecked")
 
 public class ParkhausTest {
     Parkdeck<Auto> pd01 = new Parkdeck<>();
-    Parkdeck<Auto>[] gebaeude = (Parkdeck<Auto>[]) new Object[5];
+    Parkdeck<Auto>[] gebaeude;
     
-   @SuppressWarnings("unchecked")
+
    @BeforeEach
    void before(){
-    Parkdeck<Auto>[] gebaeude = (Parkdeck<Auto>[]) new Object[5];
+    gebaeude = (Parkdeck<Auto>[]) new Object[5];
    } 
 
    @AfterEach
