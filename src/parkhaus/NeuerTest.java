@@ -7,7 +7,7 @@ public class NeuerTest {
 
    @BeforeEach
    void before(){
-    Parkdeck<Fahrezug>[] etage 
+    Parkdeck<Fahrzeug>[] etage;
     Parkhaus<Fahrzeug> erstes = new Parkhaus<>(etage);
    } 
    @AfterEach
@@ -24,4 +24,4 @@ public class NeuerTest {
     }
 }
 
-}
+
