@@ -38,6 +38,12 @@ public class ParkhausTest {
         neuer.einparken(parker);
     }
     }
+
+    @Test void achzigAutos(){
+        for(int i = 0; i < 80; i++){
+            ph01.einparken(new Auto(("BN TO " + i)));
+        }
+    }
 }
 
 
