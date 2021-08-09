@@ -12,7 +12,7 @@ import parkhaus.Zweirad;
 
 public class ParkhausTest {
     Parkdeck<Auto> pd01 = new Parkdeck<>();
-    Parkdeck<Auto>[] gebaeude = new Parkdeck<Auto>[];
+    Parkdeck<Auto>[] gebaeude = (Parkdeck<Auto>[]) new Object[5];
 
    @BeforeEach
    void before(){
