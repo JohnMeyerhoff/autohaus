@@ -7,7 +7,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
     Parkdeck<F>[] gebaeude;
     int size = 0; //wie viele Etagen gibt es?
 
-    Parkhaus(Parkdeck<F>[] haus) {
+    public Parkhaus(Parkdeck<F>[] haus) {
         this.gebaeude = haus;
         size = gebaeude.length;
     }
@@ -26,7 +26,11 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
         if (this.gebaeude[0] == null) {
             System.out.println("fehler");
         }
-        return this.gebaeude[0].einparken(einparker);
+        int i = 0;
+        while(this.gebaeude[i].capacity==this.gebaeude[i].size && (i < gebaeude.length)){
+            i++;
+        }
+        return this.gebaeude[i].einparken(einparker);
     }
 
     public boolean istEingeparkt(F anders) {

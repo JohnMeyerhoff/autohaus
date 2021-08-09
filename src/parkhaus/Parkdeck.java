@@ -58,11 +58,11 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         Iterator<Parkplatz> a;
         a = new ParkdeckIterierbar();
         if(size == 0){
-            throw new IllegalArgumentException("Das Parkdeck ist nicht belegt.");
+            return false;
         }
 
-        for(int i = 0; a.hasNext(); i++){
-            if(k.equals(parkflaeche[i].belegtDurchFahrzeug.kennzeichen)){
+        while(a.hasNext()){
+            if(k.equals(a.next().belegtDurchFahrzeug.kennzeichen)){
                 return true;
             }
         }
