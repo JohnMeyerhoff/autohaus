@@ -43,22 +43,33 @@ public class ParkhausTest {
 
     @Test
     public void einfach() {
-
+        int a = 0;
         for (Parkplatz neuer : pd01) {
-            Auto parker = new Auto("MS 03 03");
+            Auto parker = new Auto("MS 03 "+a);
             neuer.einparken(parker);
+        }
+        for (int i = 0; i < pd01.getSize(); i++) {
+            Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("MS 03 " + i))));
         }
     }
 
     @Test
     void achzigAutos() {
-
         for (int i = 0; i < 80; i++) {
             ph01.einparken(new Auto(("BN TO " + i)));
         }
         for (int i = 0; i < 80; i++) {
             Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
         }
-
     }
+    //TODO 
+    /*
+    Dieser Test muss verifiziert werden, durch zwei andere Tests.
+    Es muss geprüft werden, ob nach dem einparken der Autos die Funktion istEingeparkt
+    korrekt funktioniert. D.h.: Sie gibt False zurück für nicht Eingeparkte autos.
+
+    Es muss geprüft werden ob autos tatsächlich im Parkhaus sind, dazu kann manuell
+    auf das Parkdeck zugegriffen werden, bzw es könnte eine getParkplatz methode implementiert
+    werden, falls dies nicht zu aufwändig ist.
+    */
 }

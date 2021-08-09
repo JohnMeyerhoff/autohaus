@@ -96,4 +96,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         }
         
     }
+    public int getSize() {
+        return this.size;
+    }
 }
