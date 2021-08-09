@@ -1,3 +1,4 @@
+package parkhaus;
 public class Fahrzeug implements Comparable<Fahrzeug>{
     protected String kennzeichen;
     protected boolean hatBehindertenAusweis;

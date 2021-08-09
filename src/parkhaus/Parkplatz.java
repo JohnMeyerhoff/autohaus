@@ -1,3 +1,4 @@
+package parkhaus;
 public class Parkplatz {
     boolean istBehindertenParkplatz;
     boolean istBelegt;
