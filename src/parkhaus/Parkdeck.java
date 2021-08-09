@@ -55,18 +55,14 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
        return result;
     }
     public boolean kennzeichenSuche(String k){
-        Iterator<Parkplatz> a;
-        a = new ParkdeckIterierbar();
-        if(size == 0){
-            return false;
-        }
-
-        while(a.hasNext()){
-            if(k.equals(a.next().belegtDurchFahrzeug.kennzeichen)){
-                return true;
+        //Wenn size ==0 ist wird die foreach schleife nicht iteriert bzw hat 0 iterationen
+        // ==>> return false
+        for(Parkplatz x : this){ //Für alle Parkplätze
+            if(k.equals(x.belegtDurchFahrzeug.kennzeichen)){
+                return true;//Vergleiche Kennzeichen bis Übereinstimmung
             }
         }
-        return false;
+        return false;//Es gab keine übereinstimmung bei den Parkplätzen dieses Parkdecks
     }
     public int fahrzeugSuche(Fahrzeug b){
         int gefunden = -1;
