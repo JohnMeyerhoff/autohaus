@@ -23,7 +23,7 @@ public class ParkhausTest {
 
    @AfterEach
    void after(){
-
+    gebaeude = null;
    }
     //Das fahrzeug nimmt einen Platz ein, wir haben 90 plätze. 80 sollte passen. 
     // Generieren sie mit eienr schelife 80 autos die sie einparken. Gebe denen
@@ -31,7 +31,9 @@ public class ParkhausTest {
 
     @Test
     public void einfach(){
-    
+    for (Auto parker : pd01) {
+        parker.einparken();
+    }
     }
 }
 
