@@ -25,7 +25,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     int capacity = 30;
     int size = 0;
 
-    Parkdeck(){
+    public Parkdeck(){
         this.parkflaeche = new Parkplatz[30];
     }
     public boolean einparken(T einparker) {
