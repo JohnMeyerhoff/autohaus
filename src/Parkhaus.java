@@ -1,11 +1,12 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+
 public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>> {
-    Parkdeck<T>[] gebaeude;
+    Parkdeck<F>[] gebaeude;
     int size = 0; //wie viele Etagen gibt es?
 
-    Parkhaus(Parkdeck<Fahrzeug>[] haus) {
+    Parkhaus(Parkdeck<F>[] haus) {
         this.gebaeude = haus;
         size = gebaeude.length;
     }
@@ -15,19 +16,19 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
      * @param haus Parkdeckarray
      * @param fuellstand Beschreibt wie weit der Parkdeckarray gefüllt ist.
      */
-    Parkhaus(Parkdeck<Fahrzeug>[] haus, int fuellstand) {
+    Parkhaus(Parkdeck<F>[] haus, int fuellstand) {
         this.gebaeude = haus;
         this.size = fuellstand;
     }
 
-    public boolean einparken(Fahrzeug einparker) {
+    public boolean einparken(F einparker) {
         if (this.gebaeude[0] == null) {
             System.out.println("fehler");
         }
         return this.gebaeude[0].einparken(einparker);
     }
 
-    public boolean istEingeparkt(Fahrzeug anders) {
+    public boolean istEingeparkt(F anders) {
         for (int i = 0; i < gebaeude.length; i++) {
             if (gebaeude[i].kennzeichenSuche(anders.kennzeichen)) {
                 return true;
@@ -52,7 +53,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
     }
 
     public void printFreiePlaetze() {
-        for (Parkdeck<Fahrzeug> a : gebaeude) {
+        for (Parkdeck<F> a : gebaeude) {
             System.out.println(a.getFreiePlaetze());
         }
     }
@@ -71,7 +72,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
         return new Ebeneniterator();
     }
 
-    public class Ebeneniterator implements Iterator<Parkdeck<Fahrzeug>> {
+    public class Ebeneniterator implements Iterator<Parkdeck<F>> {
         int bookmark = 0;
 
         @Override
@@ -83,7 +84,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
         }
 
         @Override
-        public Parkdeck<Fahrzeug> next() {
+        public Parkdeck<F> next() {
            if(!hasNext()){
                 throw new NoSuchElementException("Es gibt gar nix nächstes.");
            }
