@@ -50,7 +50,6 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         result += "\nbelegte Parkplaetze: "+ size;
         for (Parkplatz x: this) {
             result += "\n"+ x.toString();
-            
         }
        return result;
     }
