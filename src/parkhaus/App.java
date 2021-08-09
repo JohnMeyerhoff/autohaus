@@ -11,13 +11,13 @@ public class App {
         haus[0] = pd01;
         haus[1] = pd02;
         haus[2] = pd03;
-        Parkhaus ph = new Parkhaus(haus);
+        Parkhaus<Fahrzeug> ph = new Parkhaus(haus);
         etage[0] = pd01;
         etage[1] = pd02;
         etage[2] = pd03;
         etage[3] = pd01;
         etage[4] = pd02;
-        Parkhaus ph1 = new Parkhaus(etage);
+        Parkhaus<Fahrzeug> ph1 = new Parkhaus(etage);
         Fahrzeug blauerOpel = new Auto("BN FN 2");
         Fahrzeug moped = new Zweirad("MS KG 3");
         ph.woIstFahrzeug(blauerOpel);
