@@ -11,12 +11,12 @@ import parkhaus.Parkhaus;
 import parkhaus.Zweirad;
 
 public class ParkhausTest {
-    Parkdeck<Auto>[] etageA;
-    Parkdeck<Zweirad>[] etageZ;
+    Parkdeck<Auto> eins = new Parkdeck<>();
+    Parkdeck<Auto>[] gebaeude;
 
    @BeforeEach
    void before(){
-    Parkhaus<Auto> erstes = new Parkhaus<>(etage);
+    Parkhaus<Auto> erstes = new Parkhaus<>(eins);
    } 
 
    @AfterEach
