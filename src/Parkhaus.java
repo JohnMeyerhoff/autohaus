@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 
-public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>> {
+public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
     Parkdeck<F>[] gebaeude;
     int size = 0; //wie viele Etagen gibt es?
 
@@ -60,7 +60,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
 
     public String toString() {
         StringBuilder bld = new StringBuilder();
-        for (Parkdeck<Fahrzeug> pd : this) {
+        for (Parkdeck<F> pd : this) {
             bld.append(pd.toString() + "\n");
         }
         return bld.toString();
@@ -68,7 +68,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>
     }
 
     @Override
-    public Iterator<Parkdeck<Fahrzeug>> iterator() {
+    public Iterator<Parkdeck<F>> iterator() {
         return new Ebeneniterator();
     }
 
