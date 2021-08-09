@@ -1,13 +1,11 @@
 package tests;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import Parkdeck;
-
+import 
 public class Test {
    @BeforeEach
    void before(){
-    Parkdeck<Fahrzeug> etage = new Parkdeck<>();
-    Parkhaus<Fahrzeug> erstes = new Parkhaus<>(etage);
+    Park
    } 
    @AfterEach
    void after(){
