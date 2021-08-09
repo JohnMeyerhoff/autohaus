@@ -10,7 +10,8 @@ import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
 
 public class ParkhausTest {
-    Parkdeck<Auto>[] etage;
+    Parkdeck<Auto>[] etageA;
+    Parkdeck<Zweirad>[] etageZ;
 
    @BeforeEach
    void before(){
