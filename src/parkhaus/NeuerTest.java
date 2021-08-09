@@ -4,10 +4,10 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 public class NeuerTest {
-
+    Parkdeck<Fahrzeug>[] etage;
+    
    @BeforeEach
    void before(){
-    Parkdeck<Fahrzeug>[] etage;
     Parkhaus<Fahrzeug> erstes = new Parkhaus<>(etage);
    } 
    @AfterEach
