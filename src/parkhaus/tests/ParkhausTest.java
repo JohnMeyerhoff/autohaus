@@ -8,6 +8,7 @@ import parkhaus.Auto;
 import parkhaus.Fahrzeug;
 import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
+import parkhaus.Parkplatz;
 import parkhaus.Zweirad;
 @SuppressWarnings("unchecked")
 
@@ -31,8 +32,10 @@ public class ParkhausTest {
 
     @Test
     public void einfach(){
-    for (Auto parker : pd01) {
-        parker.einparken();
+    
+    for (Parkplatz neuer: pd01) {
+        Auto parker = new Auto("MS 03 03");
+        neuer.einparken(parker);
     }
     }
 }
