@@ -8,6 +8,7 @@ import parkhaus.Auto;
 import parkhaus.Fahrzeug;
 import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
+import parkhaus.Zweirad;
 
 public class ParkhausTest {
     Parkdeck<Auto>[] etageA;
