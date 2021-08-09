@@ -11,52 +11,54 @@ import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
 import parkhaus.Parkplatz;
 import parkhaus.Zweirad;
+
 @SuppressWarnings("unchecked")
 
 public class ParkhausTest {
-    Parkdeck<Auto> pd01 = new Parkdeck<>();
-    Parkdeck<Auto>[] gebaeude;
-    
+    Parkdeck<Fahrzeug> pd01; 
+    Parkdeck<Fahrzeug> pd02;
+    Parkdeck<Fahrzeug> pd03;
+    Parkdeck<Fahrzeug>[] haus;
+    Parkhaus<Fahrzeug> ph01;
 
-   @BeforeEach
-   void before(){
-    gebaeude = (Parkdeck<Auto>[]) new Parkdeck[3];
-   } 
-
-   @AfterEach
-   void after(){
-    gebaeude = null;
-   }
-    //Das fahrzeug nimmt einen Platz ein, wir haben 90 plätze. 80 sollte passen. 
-    // Generieren sie mit eienr schelife 80 autos die sie einparken. Gebe denen
-    //kein Varialennamen. 
-
-    @Test
-    public void einfach(){
-    
-    for (Parkplatz neuer: pd01) {
-        Auto parker = new Auto("MS 03 03");
-        neuer.einparken(parker);
-    }
-    }
-
-    @Test void achzigAutos(){
-        Parkdeck<Fahrzeug> pd05 = new Parkdeck<>(); // je 30 plätze
-        Parkdeck<Fahrzeug> pd02 = new Parkdeck<>();
-        Parkdeck<Fahrzeug> pd03 = new Parkdeck<>();
-        Parkdeck<Fahrzeug>[] haus = (Parkdeck<Fahrzeug>[]) new Parkdeck[3];
-        haus[0] = pd05;
+    @BeforeEach
+    void before() {
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        pd02 = new Parkdeck<>();
+        pd03 = new Parkdeck<>();
+        haus = (Parkdeck<Fahrzeug>[]) new Parkdeck[3];
+        haus[0] = pd01;
         haus[1] = pd02;
         haus[2] = pd03;
-        Parkhaus<Fahrzeug> ph01 = new Parkhaus<>(haus);
-        for(int i = 0; i < 80; i++){
+        ph01 = new Parkhaus<>(haus);
+    }
+
+    @AfterEach
+    void after() {
+        ph01 = null;
+    }
+    // Das fahrzeug nimmt einen Platz ein, wir haben 90 plätze. 80 sollte passen.
+    // Generieren sie mit eienr schelife 80 autos die sie einparken. Gebe denen
+    // kein Varialennamen.
+
+    @Test
+    public void einfach() {
+
+        for (Parkplatz neuer : pd01) {
+            Auto parker = new Auto("MS 03 03");
+            neuer.einparken(parker);
+        }
+    }
+
+    @Test
+    void achzigAutos() {
+
+        for (int i = 0; i < 80; i++) {
             ph01.einparken(new Auto(("BN TO " + i)));
         }
-        for(int i = 0; i < 80; i++){
-            Assertions.assertEquals(true,ph01.istEingeparkt(new Auto(("BN TO " + i))));
+        for (int i = 0; i < 80; i++) {
+            Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
         }
 
     }
 }
-
-
