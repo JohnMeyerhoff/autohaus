@@ -1,8 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Parkhaus implements Iterable<Parkdeck<Fahrzeug>> {
-    Parkdeck<Fahrzeug>[] gebaeude;
+public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<Fahrzeug>> {
+    Parkdeck<T>[] gebaeude;
     int size = 0; //wie viele Etagen gibt es?
 
     Parkhaus(Parkdeck<Fahrzeug>[] haus) {
