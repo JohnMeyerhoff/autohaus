@@ -30,6 +30,12 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
         while(this.gebaeude[i].capacity==this.gebaeude[i].size && (i < gebaeude.length)){
             i++;
         }
+        if(this.gebaeude[i].capacity==this.gebaeude[i].size){// i ist der index des letzen decks 
+            //Wenn i nicht der index des letzten decks ist, ist es definitiv nicht voll, durch die
+            //while Schleife.
+            //Also ist hier alles voll wenn die Bedingung zu TRUE evaluiert.
+            throw new NoSuchElementException("Alles VOLL!");
+        }
         return this.gebaeude[i].einparken(einparker);
     }
 
