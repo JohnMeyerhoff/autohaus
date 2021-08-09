@@ -2,7 +2,6 @@ public class Parkplatz {
     boolean istBehindertenParkplatz;
     boolean istBelegt;
     Fahrzeug belegtDurchFahrzeug;
-    Parkdeck<Fahrzeug> eins;
     int kosten = 5;
     Parkplatz(){
         istBehindertenParkplatz = false;
@@ -20,12 +19,15 @@ public class Parkplatz {
         this.istBelegt = true;
         this.istBehindertenParkplatz = true;
         }
-        kosten = 5;
+        this.kosten = 5;
     }
     public int getKosten(){
         return this.kosten;
     }
     public String toString(){
-        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen+ ", " + kosten + " Euro";
+        if(this.belegtDurchFahrzeug == null){
+            return "Kennzeichen: -- -- --, " + kosten + " Euro";
+        }
+        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen+ ", " + this.kosten + " Euro";
     }
 }
