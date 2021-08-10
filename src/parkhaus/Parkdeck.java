@@ -99,4 +99,26 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     public int getSize() {
         return this.size;
     }
+    public Fahrzeug ausparken(int parkplatzNummer) {
+        Fahrzeug a;
+        if(parkplatzNummer < 0 || parkplatzNummer > anzahlParkplaetze()){
+            System.out.println("Ungültige Nummer.");
+            return null;
+        }else{
+            a = parkflaeche[parkplatzNummer].belegtDurchFahrzeug;
+            if(a != null){ //Parkplatz ist belegt
+                parkflaeche[parkplatzNummer].belegtDurchFahrzeug = null;
+                size--;
+
+            }
+            return a;
+        }
+    }
+    public int anzahlParkplaetze(){
+        return parkflaeche.length; //oder capacity
+    }
+    
+    public int anzahlBelegteParkplaetze() {
+        return size;
+    }
 }

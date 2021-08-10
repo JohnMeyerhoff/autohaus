@@ -44,11 +44,17 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
         if (this.gebaeude[0] == null) {
             System.out.println("fehler");
         }
-        Fahrzeug ausparker = gebaeude[parkdeckNummer].parkflaeche[parkplatzNummer].belegtDurchFahrzeug;
-        gebaeude[parkdeckNummer].parkflaeche[parkplatzNummer] = null;
-        gebaeude[parkdeckNummer].size--;
-        return ausparker;
+        if(parkdeckNummer < getGebaeudeSize()){
+            return gebaeude[parkdeckNummer].ausparken(parkplatzNummer);
+        }else{
+            System.out.println("Parkdeck gibt es nicht.");
+            return null;
+        }
 
+    }
+
+    private int getGebaeudeSize() {
+        return size;
     }
 
     public boolean istEingeparkt(F anders) {

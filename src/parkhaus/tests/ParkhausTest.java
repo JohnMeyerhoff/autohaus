@@ -1,5 +1,7 @@
 package parkhaus.tests;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -55,6 +57,38 @@ public class ParkhausTest {
 
     @Test
     void achzigAutos() {
+        for (int i = 0; i < 80; i++) {
+            ph01.einparken(new Auto(("BN TO " + i)));
+        }
+        for (int i = 0; i < 80; i++) {
+            Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
+        }
+    }
+    @Test
+
+    void einparkenTest() {
+        for (int i = 0; i < 80; i++) {
+            ph01.einparken(new Auto(("BN TO " + i)));
+        }
+        ph01.ausparken(0, 1);
+        ph01.ausparken(0, 2);
+        ph01.ausparken(1, 1);
+        ph01.ausparken(2, 1);
+        ph01.ausparken(2, 2);
+        
+        //assertEquals(new Auto(("BN TO " + 1)), ph01.ausparken(0, 1).toString());
+        assertEquals(-1, pd01.fahrzeugSuche(new Auto(("BN TO " + 1))));
+        
+
+        for (int i = 0; i < 80; i++) {
+            Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
+        }
+    }
+    
+
+
+    @Test
+    void istEingeparktTest() {
         for (int i = 0; i < 80; i++) {
             ph01.einparken(new Auto(("BN TO " + i)));
         }
