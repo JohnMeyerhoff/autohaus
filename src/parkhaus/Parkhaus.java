@@ -39,7 +39,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
         return this.gebaeude[i].einparken(einparker);
     }
 
-    public Fahrzeug ausparken(int parkdeckNummer, int parkplatzNummer){
+    public F ausparken(int parkdeckNummer, int parkplatzNummer){
 
         if (this.gebaeude[0] == null) {
             System.out.println("fehler");

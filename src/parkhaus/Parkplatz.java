@@ -1,15 +1,17 @@
 package parkhaus;
-public class Parkplatz {
+public class Parkplatz<G extends Fahrzeug> {//extends Fahrzeug in unserer App redundant aber:
+    // Die Klasse Parkplatz WEISS NICHT dass sie nur mit Unterklassen von Fahrzeug als G
+    //Aufgerufen wird und benötigt eine Typeinschränkung für den Typ G um auf das Kennzeichen zuzugreifen.
     boolean istBehindertenParkplatz;
     boolean istBelegt;
-    Fahrzeug belegtDurchFahrzeug;
+    G belegtDurchFahrzeug;
     int kosten = 5;
     Parkplatz(){
         istBehindertenParkplatz = false;
         istBelegt = false;
         belegtDurchFahrzeug = null;
     }
-    public void einparken(Fahrzeug einparker) {
+    public void einparken(G einparker) {
         if(istBehindertenParkplatz == false){
         this.belegtDurchFahrzeug = einparker;
         this.istBelegt = true;

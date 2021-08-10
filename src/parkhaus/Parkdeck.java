@@ -2,7 +2,7 @@ package parkhaus;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
+public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>>{
     /* Frage: Warum ist das Parkdeck hier generisch?
     Wenn die Begründung für die generische Implementierung der Klasse 
     Parkdeck lautet "damit alle Fahrzeuge einparken dürfen" MUSS der typ T 
@@ -21,18 +21,18 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     "damit jedes Fahrzeug der Klasse einparken dar, welches als Parameter übergeben 
     wurde."
     */
-    Parkplatz[] parkflaeche;
+    Parkplatz<T>[] parkflaeche;
     int capacity = 30;
     int size = 0;
 
     public Parkdeck(){
-        this.parkflaeche = new Parkplatz[30];
+        this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
     }
     public boolean einparken(T einparker) {
         if(size>=capacity){
             return false;
         }
-        this.parkflaeche[size] = new Parkplatz();
+        this.parkflaeche[size] = new Parkplatz<>();
         this.parkflaeche[size].einparken(einparker);
         size++;
         return true;
@@ -49,7 +49,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
        return result;*/
        String result = getFreiePlaetze();
         result += "\nbelegte Parkplaetze: "+ size;
-        for (Parkplatz x: this) {
+        for (Parkplatz<T> x: this) {
             result += "\n"+ x;
         }
        return result;
@@ -57,7 +57,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     public boolean kennzeichenSuche(String k){
         //Wenn size ==0 ist wird die foreach schleife nicht iteriert bzw hat 0 iterationen
         // ==>> return false
-        for(Parkplatz x : this){ //Für alle Parkplätze
+        for(Parkplatz<T> x : this){ //Für alle Parkplätze
             if(k.equals(x.belegtDurchFahrzeug.kennzeichen)){
                 return true;//Vergleiche Kennzeichen bis Übereinstimmung
             }
@@ -74,10 +74,10 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         return gefunden;
     }
     @Override
-    public Iterator<Parkplatz> iterator() {
+    public Iterator<Parkplatz<T>> iterator() {
         return new ParkdeckIterierbar();
     }
-    class ParkdeckIterierbar implements Iterator<Parkplatz>{
+    class ParkdeckIterierbar implements Iterator<Parkplatz<T>>{
         int bookmark = 0; 
         @Override
         public boolean hasNext() {
@@ -88,7 +88,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
         }
 
         @Override
-        public Parkplatz next() {
+        public Parkplatz<T> next() {
             if(!hasNext()){
                 throw new NoSuchElementException("Es gibt nix mehr.");
             }
@@ -99,8 +99,8 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz>{
     public int getSize() {
         return this.size;
     }
-    public Fahrzeug ausparken(int parkplatzNummer) {
-        Fahrzeug a;
+    public T ausparken(int parkplatzNummer) {
+        T a;
         if(parkplatzNummer < 0 || parkplatzNummer > anzahlParkplaetze()){
             System.out.println("Ungültige Nummer.");
             return null;

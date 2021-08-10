@@ -2,6 +2,9 @@ package parkhaus;
 public class Fahrzeug implements Comparable<Fahrzeug>{
     protected String kennzeichen;
     protected boolean hatBehindertenAusweis;
+    public Fahrzeug(String kennz) {
+        this.kennzeichen = kennz;
+    }
     public String getKennzeichen(){
         return this.kennzeichen;
     }

@@ -68,21 +68,19 @@ public class ParkhausTest {
 
     void einparkenTest() {
         for (int i = 0; i < 80; i++) {
-            ph01.einparken(new Auto(("BN TO " + i)));
+            ph01.einparken(new Fahrzeug(("BN TO " + i)));
         }
-        ph01.ausparken(0, 1);
+        Fahrzeug a = ph01.ausparken(0, 1);
         ph01.ausparken(0, 2);
         ph01.ausparken(1, 1);
         ph01.ausparken(2, 1);
         ph01.ausparken(2, 2);
         
-        //assertEquals(new Auto(("BN TO " + 1)), ph01.ausparken(0, 1).toString());
-        assertEquals(-1, pd01.fahrzeugSuche(new Auto(("BN TO " + 1))));
+        
+        assertEquals(0,new Fahrzeug(("BN TO " + 1)).compareTo(a));
+        assertEquals(null,ph01.ausparken(0, 1));
         
 
-        for (int i = 0; i < 80; i++) {
-            Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
-        }
     }
     
 
