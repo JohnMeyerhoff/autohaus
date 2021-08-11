@@ -9,6 +9,7 @@ public class BasicTest {
     Vorgehen:#
     Neuen Test (Methode) anlegen
     Brauche ich weitere imports?
+    Habe ich eine Boilerplate, oder kann ich sie aus anderen Tests übernehmen?
     Kann ich "Scaffolding" aus anderen Tests übernehmen?
     Erwartungswert ermitteln
         - Erwartungs-Output (expected) für spezifischen Input
@@ -23,6 +24,7 @@ public class BasicTest {
     Vorgehen:#
     Neuen Test (Methode) anlegen
     Brauche ich weitere imports?
+    Habe ich eine Boilerplate, oder kann ich sie aus anderen Tests übernehmen?
     Kann ich "Scaffolding" aus anderen Tests übernehmen?
     Erwartungswert ermitteln
         - Erwartungs-Output (expected) für spezifischen Input
@@ -41,6 +43,7 @@ public class BasicTest {
     Vorgehen:#
     Neuen Test (Methode) anlegen
     Brauche ich weitere imports?
+    Habe ich eine Boilerplate, oder kann ich sie aus anderen Tests übernehmen?
     Kann ich "Scaffolding" aus anderen Tests übernehmen?
     Erwartungswert ermitteln
         - Erwartungs-Output (expected) für spezifischen Input
