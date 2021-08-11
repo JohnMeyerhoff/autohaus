@@ -76,11 +76,9 @@ public class ParkhausTest {
         ph01.ausparken(2, 1);
         ph01.ausparken(2, 2);
         
-        
         assertEquals(0,new Fahrzeug(("BN TO " + 1)).compareTo(a));
         assertEquals(null,ph01.ausparken(0, 1));
         
-
     }
     
 
