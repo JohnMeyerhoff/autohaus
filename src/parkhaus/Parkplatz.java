@@ -1,36 +1,44 @@
 package parkhaus;
-public class Parkplatz<G extends Fahrzeug> {//extends Fahrzeug in unserer App redundant aber:
-    // Die Klasse Parkplatz WEISS NICHT dass sie nur mit Unterklassen von Fahrzeug als G
-    //Aufgerufen wird und benötigt eine Typeinschränkung für den Typ G um auf das Kennzeichen zuzugreifen.
+
+public class Parkplatz<G extends Fahrzeug> {
+    // extends Fahrzeug in unserer App redundant aber:
+    // Die Klasse Parkplatz WEISS NICHT dass sie nur mit
+    // Unterklassen von Fahrzeug als G
+    // Aufgerufen wird und benötigt eine Typeinschränkung für den Typ G um auf das
+    // Kennzeichen zuzugreifen.
     boolean istBehindertenParkplatz;
     boolean istBelegt;
     G belegtDurchFahrzeug;
     int kosten = 5;
-    Parkplatz(){
+
+    Parkplatz() {
         istBehindertenParkplatz = false;
         istBelegt = false;
         belegtDurchFahrzeug = null;
     }
+
     public void einparken(G einparker) {
-        if(istBehindertenParkplatz == false){
-        this.belegtDurchFahrzeug = einparker;
-        this.istBelegt = true;
-        //von Klara
-        this.istBehindertenParkplatz = false;
-        }else{
-        this.belegtDurchFahrzeug = einparker;
-        this.istBelegt = true;
-        this.istBehindertenParkplatz = true;
+        if (istBehindertenParkplatz == false) {
+            this.belegtDurchFahrzeug = einparker;
+            this.istBelegt = true;
+            // von Klara
+            this.istBehindertenParkplatz = false;
+        } else {
+            this.belegtDurchFahrzeug = einparker;
+            this.istBelegt = true;
+            this.istBehindertenParkplatz = true;
         }
         this.kosten = 5;
     }
-    public int getKosten(){
+
+    public int getKosten() {
         return this.kosten;
     }
-    public String toString(){
-        if(this.belegtDurchFahrzeug == null){
+
+    public String toString() {
+        if (this.belegtDurchFahrzeug == null) {
             return "Kennzeichen: -- -- --, " + kosten + " Euro";
         }
-        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen+ ", " + this.kosten + " Euro";
+        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen + ", " + this.kosten + " Euro";
     }
 }

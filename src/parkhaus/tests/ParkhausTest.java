@@ -17,7 +17,7 @@ import parkhaus.Zweirad;
 @SuppressWarnings("unchecked")
 
 public class ParkhausTest {
-    Parkdeck<Fahrzeug> pd01; 
+    Parkdeck<Fahrzeug> pd01;
     Parkdeck<Fahrzeug> pd02;
     Parkdeck<Fahrzeug> pd03;
     Parkdeck<Fahrzeug>[] haus;
@@ -47,7 +47,7 @@ public class ParkhausTest {
     public void einfach() {
         int a = 0;
         for (Parkplatz neuer : pd01) {
-            Auto parker = new Auto("MS 03 "+a);
+            Auto parker = new Auto("MS 03 " + a);
             neuer.einparken(parker);
         }
         for (int i = 0; i < pd01.getSize(); i++) {
@@ -64,6 +64,7 @@ public class ParkhausTest {
             Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
         }
     }
+
     @Test
 
     void einparkenTest() {
@@ -75,13 +76,11 @@ public class ParkhausTest {
         ph01.ausparken(1, 1);
         ph01.ausparken(2, 1);
         ph01.ausparken(2, 2);
-        
-        assertEquals(0,new Fahrzeug(("BN TO " + 1)).compareTo(a));
-        assertEquals(null,ph01.ausparken(0, 1));
-        
-    }
-    
 
+        assertEquals(0, new Fahrzeug(("BN TO " + 1)).compareTo(a));
+        assertEquals(null, ph01.ausparken(0, 1));
+
+    }
 
     @Test
     void istEingeparktTest() {
@@ -92,17 +91,16 @@ public class ParkhausTest {
             Assertions.assertEquals(true, ph01.istEingeparkt(new Auto(("BN TO " + i))));
         }
     }
-    //TODO 
+    // TODO
     /*
-    Es könnte sein, dass einparken und ausparken wie folgt implementiert sind:
-    einparken : return true
-    istEingeparkt: return true
-    Dieser Test muss verifiziert werden, durch zwei andere Tests.
-    Es muss geprüft werden, ob nach dem einparken der Autos die Funktion istEingeparkt
-    korrekt funktioniert. D.h.: Sie gibt False zurück für nicht Eingeparkte autos.
-
-    Es muss geprüft werden ob autos tatsächlich im Parkhaus sind, dazu kann manuell
-    auf das Parkdeck zugegriffen werden, bzw es könnte eine getParkplatz methode implementiert
-    werden, falls dies nicht zu aufwändig ist.
-    */
+     * Es könnte sein, dass einparken und ausparken wie folgt implementiert sind:
+     * einparken : return true istEingeparkt: return true Dieser Test muss
+     * verifiziert werden, durch zwei andere Tests. Es muss geprüft werden, ob nach
+     * dem einparken der Autos die Funktion istEingeparkt korrekt funktioniert.
+     * D.h.: Sie gibt False zurück für nicht Eingeparkte autos.
+     * 
+     * Es muss geprüft werden ob autos tatsächlich im Parkhaus sind, dazu kann
+     * manuell auf das Parkdeck zugegriffen werden, bzw es könnte eine getParkplatz
+     * methode implementiert werden, falls dies nicht zu aufwändig ist.
+     */
 }

@@ -1,11 +1,11 @@
 package parkhaus;
+
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
 public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
     Parkdeck<F>[] gebaeude;
-    int size = 0; //wie viele Etagen gibt es?
+    int size = 0; // wie viele Etagen gibt es?
 
     public Parkhaus(Parkdeck<F>[] haus) {
         this.gebaeude = haus;
@@ -14,7 +14,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
 
     /**
      * 
-     * @param haus Parkdeckarray
+     * @param haus       Parkdeckarray
      * @param fuellstand Beschreibt wie weit der Parkdeckarray gefüllt ist.
      */
     Parkhaus(Parkdeck<F>[] haus, int fuellstand) {
@@ -27,26 +27,27 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
             System.out.println("fehler");
         }
         int i = 0;
-        while(this.gebaeude[i].capacity==this.gebaeude[i].size && (i < gebaeude.length)){
+        while (this.gebaeude[i].capacity == this.gebaeude[i].size && (i < gebaeude.length)) {
             i++;
         }
-        if(this.gebaeude[i].capacity==this.gebaeude[i].size){// i ist der index des letzen decks 
-            //Wenn i nicht der index des letzten decks ist, ist es definitiv nicht voll, durch die
-            //while Schleife.
-            //Also ist hier alles voll wenn die Bedingung zu TRUE evaluiert.
+        if (this.gebaeude[i].capacity == this.gebaeude[i].size) {// i ist der index des letzen decks
+            // Wenn i nicht der index des letzten decks ist, ist es definitiv nicht voll,
+            // durch die
+            // while Schleife.
+            // Also ist hier alles voll wenn die Bedingung zu TRUE evaluiert.
             throw new NoSuchElementException("Alles VOLL!");
         }
         return this.gebaeude[i].einparken(einparker);
     }
 
-    public F ausparken(int parkdeckNummer, int parkplatzNummer){
+    public F ausparken(int parkdeckNummer, int parkplatzNummer) {
 
         if (this.gebaeude[0] == null) {
             System.out.println("fehler");
         }
-        if(parkdeckNummer < getGebaeudeSize()){
+        if (parkdeckNummer < getGebaeudeSize()) {
             return gebaeude[parkdeckNummer].ausparken(parkplatzNummer);
-        }else{
+        } else {
             System.out.println("Parkdeck gibt es nicht.");
             return null;
         }
@@ -93,7 +94,8 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
             bld.append(pd.toString() + "\n");
         }
         return bld.toString();
-       // return gebaeude[0].toString() + "\n" + gebaeude[1].toString() + "\n" + gebaeude[2].toString();
+        // return gebaeude[0].toString() + "\n" + gebaeude[1].toString() + "\n" +
+        // gebaeude[2].toString();
     }
 
     @Override
@@ -114,9 +116,9 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
 
         @Override
         public Parkdeck<F> next() {
-           if(!hasNext()){
+            if (!hasNext()) {
                 throw new NoSuchElementException("Es gibt gar nix nächstes.");
-           }
+            }
             return gebaeude[bookmark++];
         }
 

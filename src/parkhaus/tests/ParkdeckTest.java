@@ -15,19 +15,20 @@ import parkhaus.Parkdeck;
 import parkhaus.Parkplatz;
 
 public class ParkdeckTest {
-    /* testEinparken(): Testen Sie in einem Parkdeck ohne Parkhaus,
-    ob das Ein-und Auspraken von 5 Fahrzeugen korrekt funktioniert.  
-    Prüfen Sie nach jeder der 10 Operationen, ob die Fahrzeuge an den 
-    korrekten Parkplätzen eingeparkt sind und ob das Parkdeck die 
-    korrekte Anzahl an freien Parkplätzen meldet.
-    Wenn bei einem Test dieser Art die Suchmethoden verwendet werden, kann es sein,
-    dass die Musterlösung bzw. der korrekte Test fehlschlägt, obwohl der Test 
-    korrekt geschrieben wurde.
-    */
+    /*
+     * testEinparken(): Testen Sie in einem Parkdeck ohne Parkhaus, ob das Ein-und
+     * Auspraken von 5 Fahrzeugen korrekt funktioniert. Prüfen Sie nach jeder der 10
+     * Operationen, ob die Fahrzeuge an den korrekten Parkplätzen eingeparkt sind
+     * und ob das Parkdeck die korrekte Anzahl an freien Parkplätzen meldet. Wenn
+     * bei einem Test dieser Art die Suchmethoden verwendet werden, kann es sein,
+     * dass die Musterlösung bzw. der korrekte Test fehlschlägt, obwohl der Test
+     * korrekt geschrieben wurde.
+     */
     Parkdeck<Fahrzeug> pd01;
     Parkdeck<Fahrzeug> pd02;
     Parkdeck<Fahrzeug> pd03;
     Parkdeck<Fahrzeug>[] haus;
+
     @Test
     void testEinparken() {
         pd01 = new Parkdeck<>(); // je 30 plätze
@@ -43,8 +44,8 @@ public class ParkdeckTest {
         assertEquals(null, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
         assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
-        
-        pd01.einparken(c); 
+
+        pd01.einparken(c);
         assertEquals(b, pd01.pPlatz(0));
         assertEquals(c, pd01.pPlatz(1));
         assertEquals(null, pd01.pPlatz(2));

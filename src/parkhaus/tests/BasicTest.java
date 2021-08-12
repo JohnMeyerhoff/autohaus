@@ -120,15 +120,15 @@ public class BasicTest {
         Auto blauerOpel = new Auto("BN FN 2");
         Auto gruenerOpel = new Auto("BN FN 2");
         Assertions.assertEquals("BN FN 2", blauerOpel.getKennzeichen());
-        Assertions.assertEquals("BN FN 2", blauerOpel.toString());//"ergebnis" in return-Wert "gespeichert"
+        Assertions.assertEquals("BN FN 2", blauerOpel.toString());// "ergebnis" in return-Wert "gespeichert"
         Assertions.assertEquals(0, blauerOpel.compareTo(gruenerOpel));
         // Der letzte test prüft, ob Gleichheit besteht wenn mit dem kennzeichen
         // verglichen wird
 
-        //Umformung
-        final String actual =  blauerOpel.toString();
+        // Umformung
+        final String actual = blauerOpel.toString();
         final String expected = "BN FN 2";
-        Assertions.assertEquals(expected,actual);
+        Assertions.assertEquals(expected, actual);
     }
 
 }
