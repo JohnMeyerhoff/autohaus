@@ -24,9 +24,13 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>>{
     Parkplatz<T>[] parkflaeche;
     int capacity = 30;
     int size = 0;
-
+    
     public Parkdeck(){
         this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
+    }
+    
+    public Fahrzeug pPlatz(int platznummer){
+        return (parkflaeche[platznummer] !=null) ? parkflaeche[platznummer].belegtDurchFahrzeug : null;
     }
     public boolean einparken(T einparker) {
         if(size>=capacity){
