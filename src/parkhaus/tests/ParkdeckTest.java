@@ -42,6 +42,7 @@ public class ParkdeckTest {
         assertEquals(null, pd01.pPlatz(2));
         assertEquals(null, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
         
         pd01.einparken(c); 
         assertEquals(b, pd01.pPlatz(0));
@@ -49,6 +50,7 @@ public class ParkdeckTest {
         assertEquals(null, pd01.pPlatz(2));
         assertEquals(null, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 28, pd01.getFreiePlaetze());
 
         pd01.einparken(d);
         assertEquals(b, pd01.pPlatz(0));
@@ -56,6 +58,7 @@ public class ParkdeckTest {
         assertEquals(d, pd01.pPlatz(2));
         assertEquals(null, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 27, pd01.getFreiePlaetze());
 
         pd01.einparken(e);
         assertEquals(b, pd01.pPlatz(0));
@@ -63,6 +66,7 @@ public class ParkdeckTest {
         assertEquals(d, pd01.pPlatz(2));
         assertEquals(e, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 26, pd01.getFreiePlaetze());
 
         pd01.einparken(f);
         assertEquals(b, pd01.pPlatz(0));
@@ -70,8 +74,7 @@ public class ParkdeckTest {
         assertEquals(d, pd01.pPlatz(2));
         assertEquals(e, pd01.pPlatz(3));
         assertEquals(f, pd01.pPlatz(4));
-
-        assertEquals(5, pd01.anzahlBelegteParkplaetze());
+        assertEquals("Freie Plaetze: " + 25, pd01.getFreiePlaetze());
 
         pd01.ausparken(4);
         assertEquals(b, pd01.pPlatz(0));
@@ -79,32 +82,35 @@ public class ParkdeckTest {
         assertEquals(d, pd01.pPlatz(2));
         assertEquals(e, pd01.pPlatz(3));
         assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 26, pd01.getFreiePlaetze());
         pd01.ausparken(2);
-        assertEquals(true, pd01.kennzeichenSuche(b.getKennzeichen()));
-        assertEquals(true, pd01.kennzeichenSuche(c.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(d.getKennzeichen()));
-        assertEquals(true, pd01.kennzeichenSuche(e.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(f.getKennzeichen()));
-     
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(c, pd01.pPlatz(1));
+        assertEquals(null, pd01.pPlatz(2));
+        assertEquals(e, pd01.pPlatz(3));
+        assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 27, pd01.getFreiePlaetze());
         pd01.ausparken(3);
-        assertEquals(true, pd01.kennzeichenSuche(b.getKennzeichen()));
-        assertEquals(true, pd01.kennzeichenSuche(c.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(d.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(e.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(f.getKennzeichen()));
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(c, pd01.pPlatz(1));
+        assertEquals(null, pd01.pPlatz(2));
+        assertEquals(null, pd01.pPlatz(3));
+        assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 28, pd01.getFreiePlaetze());
         pd01.ausparken(1);
-        assertEquals(true, pd01.kennzeichenSuche(b.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(d.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(e.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(f.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(c.getKennzeichen()));
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(null, pd01.pPlatz(1));
+        assertEquals(null, pd01.pPlatz(2));
+        assertEquals(null, pd01.pPlatz(3));
+        assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
         pd01.ausparken(0);
-        assertEquals(false, pd01.kennzeichenSuche(b.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(d.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(e.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(f.getKennzeichen()));
-        assertEquals(false, pd01.kennzeichenSuche(c.getKennzeichen()));
-
+        assertEquals(null, pd01.pPlatz(0));
+        assertEquals(null, pd01.pPlatz(1));
+        assertEquals(null, pd01.pPlatz(2));
+        assertEquals(null, pd01.pPlatz(3));
+        assertEquals(null, pd01.pPlatz(4));
+        assertEquals("Freie Plaetze: " + 30, pd01.getFreiePlaetze());
 
         assertEquals(0, pd01.anzahlBelegteParkplaetze());
     }
