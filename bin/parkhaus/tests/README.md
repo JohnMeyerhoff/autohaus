@@ -15,5 +15,5 @@
     wie berechnet sich mein Erwartungswert 
 
 # Abschließende Frage (Für Klausur)
- __Habe ich eine Assertion, welche die Frage Beantwortet__
+ __Habe ich eine Assertion, welche die Frage Beantwortet ?__
      
