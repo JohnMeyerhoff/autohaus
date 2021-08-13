@@ -1,4 +1,4 @@
-# Vorgehen:
+# Vorgehen
 0. Aufgabenstellung lesen.
 1. Neuen Test (Methode) anlegen Brauche ich weitere imports?
 
