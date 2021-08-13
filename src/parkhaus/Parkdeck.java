@@ -28,6 +28,9 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
 
     public Parkdeck() {
         this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
+        for(Parkplatz<T> f : this.parkflaeche){
+            f = new Parkplatz<>();
+        }
     }
 
     public Fahrzeug pPlatz(int platznummer) {
