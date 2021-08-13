@@ -130,14 +130,43 @@ public class ParkdeckTest {
     void testIterator() {
 
     }
+    // ziel für morgen ist es die suche bzw eine der suchen lückenfreundlich zu
+    // gestalten so dass leere parkplätze nicht anfangen zu brennen
+    // bei suche beheben schauen ob der Parkplatz null ist bevor wir uns das
+    // belegtdurch ansehen, dann schauen ob belegtdurch null ist bevor wir uns
+    // belegtdurch.kennzeichen ansehen
 
     @Test
     void testKennzeichenSuche() {
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        pd01.einparken(b);
+        assertEquals(true, pd01.kennzeichenSuche("BN OP 1"));
+        pd01.ausparken(0);
+        assertEquals(false, pd01.kennzeichenSuche("BN OP 1"));
+        assertEquals(true, pd01.kennzeichenSuche("BN OP 2"));
 
     }
 
     @Test
     void testToString() {
+
+    }
+    /* 
+    Dieser Test testet das Verhalten des Parkdecks wenn:
+    - 3 Autos eingeparkt werden 
+    - das mittlere dieser 3 autos ausgeparkt wird
+    - ein neues Auto eingeparkt wird 
+    die Erwartung ist, dass sich alle 3 Autos auf dem Parkdeck befinden mit folgender Platzierung:
+    (Auto 1) (?) (Auto 3)(?) Welches Fragezeichen nimmt Auto 4?
+    */
+    @Test
+    void testAusparken() {
+
+    }
+
+    @Test
+    void testPPlatz() {
 
     }
 }

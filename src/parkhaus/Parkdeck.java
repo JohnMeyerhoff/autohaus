@@ -28,8 +28,8 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
 
     public Parkdeck() {
         this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
-        for(Parkplatz<T> f : this.parkflaeche){
-            f = new Parkplatz<>();
+        for(int i = 0; i < this.parkflaeche.length; i++){
+            this.parkflaeche[i]= new Parkplatz<>();
         }
     }
 
@@ -70,8 +70,12 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         // iterationen
         // ==>> return false
         for (Parkplatz<T> x : this) { // Für alle Parkplätze
-            if (k.equals(x.belegtDurchFahrzeug.kennzeichen)) {
-                return true;// Vergleiche Kennzeichen bis Übereinstimmung
+            if(x.belegtDurchFahrzeug == null){
+                
+            }else{
+                if (k.equals(x.belegtDurchFahrzeug.kennzeichen)) {
+                    return true;// Vergleiche Kennzeichen bis Übereinstimmung
+                } 
             }
         }
         return false;// Es gab keine übereinstimmung bei den Parkplätzen dieses Parkdecks
@@ -140,4 +144,5 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     public int anzahlBelegteParkplaetze() {
         return size;
     }
+    
 }
