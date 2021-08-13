@@ -152,21 +152,52 @@ public class ParkdeckTest {
     void testToString() {
 
     }
-    /* 
-    Dieser Test testet das Verhalten des Parkdecks wenn:
-    - 3 Autos eingeparkt werden 
-    - das mittlere dieser 3 autos ausgeparkt wird
-    - ein neues Auto eingeparkt wird 
-    die Erwartung ist, dass sich alle 3 Autos auf dem Parkdeck befinden mit folgender Platzierung:
-    (Auto 1) (?) (Auto 3)(?) Welches Fragezeichen nimmt Auto 4?
-    */
-    @Test
-    void testAusparken() {
 
+    /*
+     * Dieser Test testet das Verhalten des Parkdecks wenn: - 3 Autos eingeparkt
+     * werden - das mittlere dieser 3 autos ausgeparkt wird - ein neues Auto
+     * eingeparkt wird die Erwartung ist, dass sich alle 3 Autos auf dem Parkdeck
+     * befinden mit folgender Platzierung: (Auto 1) (?) (Auto 3)(?) Welches
+     * Fragezeichen nimmt Auto 4?
+     */
+    @Test
+
+    void testAusparken() {
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        Auto c = new Auto("BN OP 2");
+        Auto d = new Auto("BN OP 3");
+        Auto e = new Auto("BN OP 4");
+        pd01.einparken(b);
+        pd01.einparken(c);
+        pd01.einparken(d);
+        pd01.ausparken(1);
+        pd01.einparken(e);
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(e, pd01.pPlatz(1));
+        assertEquals(d, pd01.pPlatz(2));
+        assertEquals(null, pd01.pPlatz(3));
     }
 
     @Test
     void testPPlatz() {
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        Auto c = new Auto("BN OP 2");
+        pd01.einparken(b);
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(null, pd01.pPlatz(1));
+
+        pd01.einparken(c);
+        assertEquals(b, pd01.pPlatz(0));
+        assertEquals(c, pd01.pPlatz(1));
+
+        pd01.ausparken(0);
+        pd01.ausparken(1);
+
+        for (int i = 0; i < 1; i++) {
+            assertEquals(null, pd01.pPlatz(i));
+        }
 
     }
 }

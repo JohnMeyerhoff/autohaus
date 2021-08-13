@@ -41,8 +41,12 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         if (size >= capacity) {
             return false;
         }
-        this.parkflaeche[size] = new Parkplatz<>();
-        this.parkflaeche[size].einparken(einparker);
+        int i = 0; //erster freier Parkplatz
+        while(parkflaeche[i].istBelegt){ 
+            i++; 
+        }
+        // i ist der Index des ersten unbelegten Parkplatzes
+        this.parkflaeche[i].einparken(einparker);
         size++;
         return true;
     }
@@ -129,6 +133,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         } else {
             a = parkflaeche[parkplatzNummer].belegtDurchFahrzeug;
             if (a != null) { // Parkplatz ist belegt
+                parkflaeche[parkplatzNummer].istBelegt = false;
                 parkflaeche[parkplatzNummer].belegtDurchFahrzeug = null;
                 size--;
 
