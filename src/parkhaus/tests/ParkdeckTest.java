@@ -144,37 +144,32 @@ public class ParkdeckTest {
 
     @Test
     void testGetFreiePlaetze() {
-        pd01 = new Parkdeck<>(); // je 30 plätze
+        pd01 = new Parkdeck<>(); // 30 plätze
         Auto b = new Auto("BN OP 1");
-        // falls kein PArkplatz besetzt ist
+        // kein PArkplatz ist besetzt
         assertEquals("Freie Plaetze: " + 30, pd01.getFreiePlaetze());
         pd01.einparken(b);
-        //1 Parkplatz besetzt
+        // 1 Parkplatz besetzt
         assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
-        for(int i = 0; i < 29; i++){ //besetzt alle Parkplätze besetzt 
+        for (int i = 0; i < 29; i++) { // besetzt alle Parkplätze
             pd01.einparken(b);
         }
         assertEquals("Freie Plaetze: " + 0, pd01.getFreiePlaetze());
-        pd01.einparken(b);
-        //EIn auto wird mehr eingeparkt als Kapazität 30
+        pd01.einparken(b); // Es wird einparken() für das volle parkdeck aufgerufen um zu testen,
+        // ob die Freien plätze negativ werden.
         assertEquals("Freie Plaetze: " + 0, pd01.getFreiePlaetze());
     }
 
     @Test
     void testIterator() {
         int i = 0;
-        pd01 = new Parkdeck<>(); // je 30 plätze
+        pd01 = new Parkdeck<>(); // 30 plätze
         for (Parkplatz<Fahrzeug> p : pd01) {
             i++;
         }
         assertEquals(30, i);
 
     }
-    // ziel für morgen ist es die suche bzw eine der suchen lückenfreundlich zu
-    // gestalten so dass leere parkplätze nicht anfangen zu brennen
-    // bei suche beheben schauen ob der Parkplatz null ist bevor wir uns das
-    // belegtdurch ansehen, dann schauen ob belegtdurch null ist bevor wir uns
-    // belegtdurch.kennzeichen ansehen
 
     @Test
     void testKennzeichenSuche() {
@@ -185,7 +180,6 @@ public class ParkdeckTest {
         pd01.ausparken(0);
         assertEquals(false, pd01.kennzeichenSuche("BN OP 1"));
         assertEquals(false, pd01.kennzeichenSuche("BN OP 2"));
-
     }
 
     @Test
@@ -197,38 +191,22 @@ public class ParkdeckTest {
         pd01.einparken(b);
         pd01.einparken(c);
         pd01.einparken(d);
-        assertEquals("Freie Plaetze: 27
-belegte Parkplaetze: 3
-Kennzeichen: BN OP 1, 5 Euro
-Kennzeichen: BN OP 2, 5 Euro
-Kennzeichen: BN OP 3, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro
-Kennzeichen: -- -- --, 5 Euro""", pd01.toString());
+        assertEquals("Freie Plaetze: 27\n" + "belegte Parkplaetze: 3\n" + "Kennzeichen: BN OP 1, 5 Euro\n"
+                + "Kennzeichen: BN OP 2, 5 Euro\n" + "Kennzeichen: BN OP 3, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro\n" + "Kennzeichen: -- -- --, 5 Euro\n"
+                + "Kennzeichen: -- -- --, 5 Euro", pd01.toString());
     }
 
     /*
@@ -236,7 +214,7 @@ Kennzeichen: -- -- --, 5 Euro""", pd01.toString());
      * werden - das mittlere dieser 3 autos ausgeparkt wird - ein neues Auto
      * eingeparkt wird die Erwartung ist, dass sich alle 3 Autos auf dem Parkdeck
      * befinden mit folgender Platzierung: (Auto 1) (?) (Auto 3)(?) Welches
-     * Fragezeichen nimmt Auto 4?
+     * Fragezeichen nimmt Auto 4? Das Auto nimmt den ersten freien Platz.
      */
     @Test
 
@@ -262,17 +240,16 @@ Kennzeichen: -- -- --, 5 Euro""", pd01.toString());
         pd01 = new Parkdeck<>(); // je 30 plätze
         Auto b = new Auto("BN OP 1");
         Auto c = new Auto("BN OP 2");
+
         pd01.einparken(b);
         assertEquals(b, pd01.pPlatz(0));
         assertEquals(null, pd01.pPlatz(1));
-
         pd01.einparken(c);
         assertEquals(b, pd01.pPlatz(0));
         assertEquals(c, pd01.pPlatz(1));
-
         pd01.ausparken(0);
         pd01.ausparken(1);
-
+        
         for (int i = 0; i < 1; i++) {
             assertEquals(null, pd01.pPlatz(i));
         }
