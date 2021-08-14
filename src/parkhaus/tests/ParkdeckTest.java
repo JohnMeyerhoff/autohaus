@@ -27,7 +27,6 @@ public class ParkdeckTest {
     Parkdeck<Fahrzeug> pd01;
     Parkdeck<Fahrzeug> pd02;
     Parkdeck<Fahrzeug> pd03;
-    Parkdeck<Fahrzeug>[] haus;
 
     @Test
     void testEinparken() {
@@ -118,16 +117,57 @@ public class ParkdeckTest {
 
     @Test
     void testFahrzeugSuche() {
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        Auto c = new Auto("BN OP 2");
+        pd01.einparken(b);
+        assertEquals(0, pd01.fahrzeugSuche(b));
+        assertEquals(-1, pd01.fahrzeugSuche(c));
+        pd01.einparken(b);
+        pd01.einparken(b);
+        pd01.einparken(b);
+        pd01.einparken(b);
+        pd01.einparken(b);
+        pd01.einparken(c);
 
+        pd01.ausparken(0);
+        pd01.ausparken(1);
+        pd01.ausparken(2);
+        pd01.ausparken(3);
+        pd01.ausparken(4);
+        pd01.ausparken(5);
+
+        assertEquals(true, pd01.kennzeichenSuche("BN OP 2"));
+        assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
+        assertEquals(6, pd01.fahrzeugSuche(c));
     }
 
     @Test
     void testGetFreiePlaetze() {
-
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        // falls kein PArkplatz besetzt ist
+        assertEquals("Freie Plaetze: " + 30, pd01.getFreiePlaetze());
+        pd01.einparken(b);
+        //1 Parkplatz besetzt
+        assertEquals("Freie Plaetze: " + 29, pd01.getFreiePlaetze());
+        for(int i = 0; i < 29; i++){ //besetzt alle Parkplätze besetzt 
+            pd01.einparken(b);
+        }
+        assertEquals("Freie Plaetze: " + 0, pd01.getFreiePlaetze());
+        pd01.einparken(b);
+        //EIn auto wird mehr eingeparkt als Kapazität 30
+        assertEquals("Freie Plaetze: " + 0, pd01.getFreiePlaetze());
     }
 
     @Test
     void testIterator() {
+        int i = 0;
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        for (Parkplatz<Fahrzeug> p : pd01) {
+            i++;
+        }
+        assertEquals(30, i);
 
     }
     // ziel für morgen ist es die suche bzw eine der suchen lückenfreundlich zu
@@ -150,7 +190,14 @@ public class ParkdeckTest {
 
     @Test
     void testToString() {
-
+        pd01 = new Parkdeck<>(); // je 30 plätze
+        Auto b = new Auto("BN OP 1");
+        Auto c = new Auto("BN OP 2");
+        Auto d = new Auto("BN OP 3");
+        pd01.einparken(b);
+        pd01.einparken(c);
+        pd01.einparken(d);
+        assertEquals("", pd01.toString());
     }
 
     /*

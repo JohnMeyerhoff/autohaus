@@ -18,16 +18,10 @@ public class Parkplatz<G extends Fahrzeug> {
     }
 
     public void einparken(G einparker) {
-        if (istBehindertenParkplatz == false) {
-            this.belegtDurchFahrzeug = einparker;
-            this.istBelegt = true;
-            // von Klara
-            this.istBehindertenParkplatz = false;
-        } else {
-            this.belegtDurchFahrzeug = einparker;
-            this.istBelegt = true;
-            this.istBehindertenParkplatz = true;
-        }
+
+        this.belegtDurchFahrzeug = einparker;
+        this.istBelegt = true;
+
         this.kosten = 5;
     }
 

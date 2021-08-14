@@ -86,11 +86,19 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     }
 
     public int fahrzeugSuche(Fahrzeug b) {
+        // bei suche beheben schauen ob der Parkplatz null ist bevor wir uns das
+        // belegtdurch ansehen, dann schauen ob belegtdurch null ist bevor wir uns
+        // belegtdurch.kennzeichen ansehen
         int gefunden = -1;
-        for (int i = 0; (gefunden == -1) && (i < size); i++) {
-            if ((b.kennzeichen.equals(parkflaeche[i].belegtDurchFahrzeug.kennzeichen))) {
-                return i;
+        int i = 0;
+        for (Parkplatz<T> x : this) {
+            if (x.belegtDurchFahrzeug != null) {
+                if ((b.kennzeichen.equals(x.belegtDurchFahrzeug.kennzeichen))) {
+                    return i;
+                }
             }
+            i++;
+            
         }
         return gefunden;
     }
@@ -105,7 +113,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
 
         @Override
         public boolean hasNext() {
-            if (bookmark < size) {
+            if (bookmark < capacity) {
                 return true;
             }
             return false;
@@ -127,7 +135,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
 
     public T ausparken(int parkplatzNummer) {
         T a;
-        if (parkplatzNummer < 0 || parkplatzNummer > anzahlParkplaetze()) {
+        if (parkplatzNummer < 0 || parkplatzNummer >= anzahlParkplaetze()) {
             System.out.println("Ungültige Nummer.");
             return null;
         } else {
