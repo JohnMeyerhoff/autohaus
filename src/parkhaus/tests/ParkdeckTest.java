@@ -197,7 +197,38 @@ public class ParkdeckTest {
         pd01.einparken(b);
         pd01.einparken(c);
         pd01.einparken(d);
-        assertEquals("", pd01.toString());
+        assertEquals("Freie Plaetze: 27
+belegte Parkplaetze: 3
+Kennzeichen: BN OP 1, 5 Euro
+Kennzeichen: BN OP 2, 5 Euro
+Kennzeichen: BN OP 3, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro
+Kennzeichen: -- -- --, 5 Euro""", pd01.toString());
     }
 
     /*
