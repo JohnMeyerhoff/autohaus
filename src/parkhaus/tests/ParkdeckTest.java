@@ -184,7 +184,7 @@ public class ParkdeckTest {
         assertEquals(true, pd01.kennzeichenSuche("BN OP 1"));
         pd01.ausparken(0);
         assertEquals(false, pd01.kennzeichenSuche("BN OP 1"));
-        assertEquals(true, pd01.kennzeichenSuche("BN OP 2"));
+        assertEquals(false, pd01.kennzeichenSuche("BN OP 2"));
 
     }
 
