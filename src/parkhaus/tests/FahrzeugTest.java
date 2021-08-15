@@ -1,4 +1,4 @@
-package parkhaus;
+package parkhaus.tests;
 
 import org.junit.jupiter.api.Test;
 
