@@ -13,8 +13,6 @@ import parkhaus.Auto;
 import parkhaus.Fahrzeug;
 import parkhaus.Parkdeck;
 import parkhaus.Parkhaus;
-import parkhaus.Parkplatz;
-import parkhaus.Zweirad;
 
 public class BasicTest {
     Parkdeck<Fahrzeug> pd01;

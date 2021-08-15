@@ -4,17 +4,34 @@ import java.util.NoSuchElementException;
 
 public class Fahrzeug implements Comparable<Fahrzeug>{
     protected String kennzeichen;
-    protected boolean hatBehindertenAusweis;
+    protected boolean hatBehindertenAusweis; //defaults to false
     public Fahrzeug(String kennz) {
-        if(kennz== null){
-           throw new NoSuchElementException("Das ist illegal");
+       this(kennz, false);
+    }
+    public Fahrzeug(String kennz, boolean behindert){
+        if (kennz == null) {
+            throw new NoSuchElementException("Das ist illegal");
         }
         this.kennzeichen = kennz;
+        this.hatBehindertenAusweis = behindert;
+
     }
     public String getKennzeichen(){
         return this.kennzeichen;
     }
     public boolean getHatBehindertenAusweis(){
+        return this.hatBehindertenAusweis;
+    }
+    /**
+     * diese Methode gibt in der Komandozeile aus, ob das Fahrzeug einen Behindertenausweis hat
+     * @return gibt den Wert von hatBehindertenAusweis zurück
+     */
+    public boolean hatBehindertenAusweis() {
+        if (hatBehindertenAusweis == false) {
+            System.out.println(kennzeichen + ": Kein Ausweis.");
+        } else {
+            System.out.println(kennzeichen + ": Hat Ausweis.");
+        }
         return this.hatBehindertenAusweis;
     }
     @Override
