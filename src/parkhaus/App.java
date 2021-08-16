@@ -1,8 +1,8 @@
 package parkhaus;
-public class App {
 
+public class App {
+    @SuppressWarnings("unchecked")
     public static void main(String[] args) {
-        // System.out.println("Hello, World!");
         Parkdeck<Fahrzeug> pd01 = new Parkdeck<>(); // je 30 plätze
         Parkdeck<Fahrzeug> pd02 = new Parkdeck<>();
         Parkdeck<Fahrzeug> pd03 = new Parkdeck<>();
@@ -23,10 +23,9 @@ public class App {
         ph.woIstFahrzeug(blauerOpel);
         ph.einparken(blauerOpel);
         ph1.einparken(moped);
-        // ph.printFreiePlaetze();
+
         System.out.println("Parkhaus 1:");
         System.out.println(ph);
-        //System.out.println(ph1);
         ph.woIstFahrzeug(blauerOpel);
 
     }
@@ -63,13 +62,13 @@ public class App {
     // Parkplatzausgabe via Kennzeichen Tostring + Kosten Tostring
 
     // Deck 0:
-    // {"BN LO 87", 5.75 Eur},{ "SU WG 50", 17.00 Eur}
+    // "BN LO 87", 5.75 Eur; "SU WG 50", 17.00 Eur
     // Deck 1:
-    // {"BN LO 87", 5.75 Eur},{ null, 0.00 Eur}
+    // "BN LO 87", 5.75 Eur; null, 0.00 Eur
 
     // Instanceof beim Einparken testen
 
-    //forEach einbinden
+    // forEach einbinden
     // - iteriere über das Gebäude und dann über die Parkflächen
-    
+
 }

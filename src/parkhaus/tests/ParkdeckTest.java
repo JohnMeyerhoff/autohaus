@@ -155,6 +155,7 @@ public class ParkdeckTest {
         assertEquals("Freie Plaetze: " + 0, pd01.getFreiePlaetze());
     }
 
+    @SuppressWarnings("unused")
     @Test
     void testIterator() {
         int i = 0;
@@ -244,7 +245,7 @@ public class ParkdeckTest {
         assertEquals(c, pd01.pPlatz(1));
         pd01.ausparken(0);
         pd01.ausparken(1);
-        
+
         for (int i = 0; i < 1; i++) {
             assertEquals(null, pd01.pPlatz(i));
         }

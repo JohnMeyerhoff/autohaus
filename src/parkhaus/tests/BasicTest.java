@@ -1,7 +1,5 @@
 package parkhaus.tests;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +19,7 @@ public class BasicTest {
     Parkdeck<Fahrzeug>[] haus;
     Parkhaus<Fahrzeug> ph01;
 
+    @SuppressWarnings("unchecked")
     @BeforeEach
     void before() {
         pd01 = new Parkdeck<>(); // je 30 plätze

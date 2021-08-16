@@ -18,7 +18,7 @@ public class Parkplatz<G extends Fahrzeug> {
     }
 
     public void einparken(G einparker) {
-        //TODO: behindertenparkplätze implementieren
+        // TODO: behindertenparkplätze implementieren
         this.belegtDurchFahrzeug = einparker;
         this.istBelegt = true;
 

@@ -26,10 +26,11 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     int capacity = 30;
     int size = 0;
 
+    @SuppressWarnings("unchecked")
     public Parkdeck() {
         this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
-        for(int i = 0; i < this.parkflaeche.length; i++){
-            this.parkflaeche[i]= new Parkplatz<>();
+        for (int i = 0; i < this.parkflaeche.length; i++) {
+            this.parkflaeche[i] = new Parkplatz<>();
         }
     }
 
@@ -41,9 +42,9 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         if (size >= capacity) {
             return false;
         }
-        int i = 0; //erster freier Parkplatz
-        while(parkflaeche[i].istBelegt){ 
-            i++; 
+        int i = 0; // erster freier Parkplatz
+        while (parkflaeche[i].istBelegt) {
+            i++;
         }
         // i ist der Index des ersten unbelegten Parkplatzes
         this.parkflaeche[i].einparken(einparker);
@@ -56,11 +57,6 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     }
 
     public String toString() {
-        /*
-         * String result = getFreiePlaetze(); result += "\nbelegte Parkplaetze: "+ size;
-         * for(int i = 0; i < size;i++){ //die size ist max 30 result += "\n"+i+" " +
-         * parkflaeche[i].toString(); } return result;
-         */
         String result = getFreiePlaetze();
         result += "\nbelegte Parkplaetze: " + size;
         for (Parkplatz<T> x : this) {
@@ -74,12 +70,12 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         // iterationen
         // ==>> return false
         for (Parkplatz<T> x : this) { // Für alle Parkplätze
-            if(x.belegtDurchFahrzeug == null){
-                
-            }else{
+            if (x.belegtDurchFahrzeug == null) {
+
+            } else {
                 if (k.equals(x.belegtDurchFahrzeug.kennzeichen)) {
                     return true;// Vergleiche Kennzeichen bis Übereinstimmung
-                } 
+                }
             }
         }
         return false;// Es gab keine übereinstimmung bei den Parkplätzen dieses Parkdecks
@@ -98,7 +94,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
                 }
             }
             i++;
-            
+
         }
         return gefunden;
     }
@@ -157,5 +153,5 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     public int anzahlBelegteParkplaetze() {
         return size;
     }
-    
+
 }
