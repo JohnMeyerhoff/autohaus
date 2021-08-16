@@ -64,11 +64,15 @@ public class FahrzeugTest {
     }
     @Test
     void testGetKennzeichen() {
-        assertEquals("BN OP 1", b.getKennzeichen());
+        assertEquals("BN OP 1", b.getKennzeichen());//auto
+        assertEquals("BN OP 3", d.getKennzeichen());//zweirad
+        assertEquals("BN OP 4", w.getKennzeichen());//fahrzeug
     }
 
     @Test
     void testToString() {
-
+        assertEquals("BN OP 4", w.toString());
+        assertEquals("BN OP 1", b.toString());// auto
+        assertEquals("BN OP 3", d.toString());// zweirad
     }
 }
