@@ -64,7 +64,7 @@ public class FahrzeugTest {
     }
     @Test
     void testGetKennzeichen() {
-
+        assertEquals("BN OP 1", b.getKennzeichen());
     }
 
     @Test
