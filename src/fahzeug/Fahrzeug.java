@@ -27,10 +27,10 @@ public class Fahrzeug implements Comparable<Fahrzeug>{
      * @return gibt den Wert von hatBehindertenAusweis zurück
      */
     public boolean hatBehindertenAusweis() {
-        if (hatBehindertenAusweis == false) {
-            System.out.println(kennzeichen + ": Kein Ausweis.");
-        } else {
+        if (hatBehindertenAusweis) {
             System.out.println(kennzeichen + ": Hat Ausweis.");
+        } else {
+            System.out.println(kennzeichen + ": Kein Ausweis.");
         }
         return this.hatBehindertenAusweis;
     }
@@ -38,7 +38,15 @@ public class Fahrzeug implements Comparable<Fahrzeug>{
     public int compareTo(Fahrzeug o) {
         return this.kennzeichen.compareTo(o.kennzeichen);
     }
-
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof Fahrzeug){
+            return (this.compareTo((Fahrzeug)o)==0);
+        }else{
+            return this==o;
+        }
+    }
+    
     public String toString(){
         if(this.kennzeichen== null){//Durch konstruktor verhindert
             return "";
