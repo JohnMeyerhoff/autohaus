@@ -62,7 +62,7 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
 
     public boolean istEingeparkt(F anders) {
         for (int i = 0; i < gebaeude.length; i++) {
-            if (gebaeude[i].kennzeichenSuche(anders.kennzeichen)) {
+            if (gebaeude[i].kennzeichenSuche(anders.getKennzeichen())) {
                 return true;
             }
         }
@@ -74,13 +74,13 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
         for (int i = 0; i < gebaeude.length; i++) {
             erg = gebaeude[i].fahrzeugSuche(a);
             if (erg != -1) {
-                System.out.println("Ihr Auto mit Kennzeichen " + a.kennzeichen + " gefunden:");
+                System.out.println("Ihr Auto mit Kennzeichen " + a.getKennzeichen() + " gefunden:");
                 System.out.println("Parkdeck: " + i);
                 System.out.println("Platznummer: " + erg);
                 return erg;
             }
         }
-        System.out.println("Leider haben wir Ihr Auto mit Kennzeichen " + a.kennzeichen + " nicht gefunden.");
+        System.out.println("Leider haben wir Ihr Auto mit Kennzeichen " + a.getKennzeichen() + " nicht gefunden.");
         return erg;// Hier -1
     }
 
@@ -96,8 +96,6 @@ public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
             bld.append(pd.toString() + "\n");
         }
         return bld.toString();
-        // return gebaeude[0].toString() + "\n" + gebaeude[1].toString() + "\n" +
-        // gebaeude[2].toString();
     }
 
     @Override

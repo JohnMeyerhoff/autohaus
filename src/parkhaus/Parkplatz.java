@@ -35,6 +35,6 @@ public class Parkplatz<G extends Fahrzeug> {
         if (this.belegtDurchFahrzeug == null) {
             return "Kennzeichen: -- -- --, " + kosten + " Euro";
         }
-        return "Kennzeichen: " + this.belegtDurchFahrzeug.kennzeichen + ", " + this.kosten + " Euro";
+        return "Kennzeichen: " + this.belegtDurchFahrzeug.getKennzeichen() + ", " + this.kosten + " Euro";
     }
 }
