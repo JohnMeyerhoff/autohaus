@@ -1,5 +1,7 @@
 package parkhaus;
 
+import java.util.Arrays;
+
 import fahzeug.Auto;
 import fahzeug.Fahrzeug;
 import fahzeug.Zweirad;
@@ -31,7 +33,16 @@ public class App {
         System.out.println("Parkhaus 1:");
         System.out.println(ph);
         ph.woIstFahrzeug(blauerOpel);
+        
+        ph.einparken(blauerOpel);
+        ph.einparken(blauerOpel);
+        ph.einparken(blauerOpel);
 
+        //System.out.println(Arrays.toString(ParkdeckHelper.parkDeckToArray(pd01)));
+        String[] out = ParkdeckHelper.parkDeckToArray(pd01);
+        for(String o: out){
+            System.out.println(o);
+        }
     }
 
     // Struktur
