@@ -1,4 +1,4 @@
-package parkhaus;
+package fahzeug;
 
 public class Auto extends Fahrzeug {
     public Auto(String kzeichen) {

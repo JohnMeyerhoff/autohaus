@@ -3,6 +3,8 @@ package parkhaus;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import fahzeug.Fahrzeug;
+
 public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     /*
      * Frage: Warum ist das Parkdeck hier generisch? Wenn die Begründung für die

@@ -2,10 +2,11 @@ package parkhaus.tests;
 
 import org.junit.jupiter.api.Test;
 
+import fahzeug.Auto;
+import fahzeug.Fahrzeug;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import parkhaus.Auto;
-import parkhaus.Fahrzeug;
 import parkhaus.Parkdeck;
 import parkhaus.Parkplatz;
 

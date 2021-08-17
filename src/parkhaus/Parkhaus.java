@@ -3,6 +3,8 @@ package parkhaus;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import fahzeug.Fahrzeug;
+
 public class Parkhaus<F extends Fahrzeug> implements Iterable<Parkdeck<F>> {
     Parkdeck<F>[] gebaeude;
     int size = 0; // wie viele Etagen gibt es?

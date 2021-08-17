@@ -1,5 +1,9 @@
 package parkhaus;
 
+import fahzeug.Auto;
+import fahzeug.Fahrzeug;
+import fahzeug.Zweirad;
+
 public class App {
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {

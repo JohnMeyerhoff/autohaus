@@ -1,13 +1,13 @@
-package parkhaus.tests;
+package fahzeug.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import parkhaus.Auto;
-import parkhaus.Zweirad;
-import parkhaus.Fahrzeug;
+import fahzeug.Auto;
+import fahzeug.Fahrzeug;
+import fahzeug.Zweirad;
 
 public class FahrzeugTest {
    

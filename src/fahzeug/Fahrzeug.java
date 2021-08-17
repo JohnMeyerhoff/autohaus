@@ -1,4 +1,4 @@
-package parkhaus;
+package fahzeug;
 
 import java.util.NoSuchElementException;
 

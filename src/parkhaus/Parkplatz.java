@@ -1,5 +1,7 @@
 package parkhaus;
 
+import fahzeug.Fahrzeug;
+
 public class Parkplatz<G extends Fahrzeug> {
     // extends Fahrzeug in unserer App redundant aber:
     // Die Klasse Parkplatz WEISS NICHT dass sie nur mit
