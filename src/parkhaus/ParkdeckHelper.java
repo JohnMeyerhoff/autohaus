@@ -8,11 +8,12 @@ public class ParkdeckHelper {
         int x = 0;
         for (Parkplatz<T> pp : pd) {
             if (pp.belegtDurchFahrzeug != null) {
-                res[x++] = "HB: "+ pp.belegtDurchFahrzeug.getHatBehindertenAusweis()
+                res[x] = "HB: "+ pp.belegtDurchFahrzeug.getHatBehindertenAusweis()
                 + " "+ pp.belegtDurchFahrzeug.toString();
             } else {
-                res[x++] = "leer";
+                res[x] = "leer";
             }
+            x++;
         }
         return res;
     }
