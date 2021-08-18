@@ -75,7 +75,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
             if (x.belegtDurchFahrzeug == null) {
                 continue;
                
-            }else if(k.equals(x.belegtDurchFahrzeug.getKeennzeichen())){ // Vergleiche Kennzeichen bis Übereinstimmung
+            }else if(k.equals(x.belegtDurchFahrzeug.getKennzeichen())){ // Vergleiche Kennzeichen bis Übereinstimmung
             return true;
             }
         }
