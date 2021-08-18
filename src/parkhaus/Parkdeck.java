@@ -75,8 +75,8 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
             if (x.belegtDurchFahrzeug == null) {
                 continue;
             }
-            if(k.equals(x.belegtDurchFahrzeug.getKennzeichen())){ // Vergleiche Kennzeichen bis Übereinstimmung
-            return true;
+            if (k.equals(x.belegtDurchFahrzeug.getKennzeichen())) { // Vergleiche Kennzeichen bis Übereinstimmung
+                return true;
             }
         }
         return false;// Es gab keine übereinstimmung bei den Parkplätzen dieses Parkdecks
@@ -96,10 +96,12 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
         int gefunden = -1;
         int i = 0;
         for (Parkplatz<T> x : this) {
-            if (x.belegtDurchFahrzeug != null) {
-                if ((b.getKennzeichen().equals(x.belegtDurchFahrzeug.getKennzeichen()))) {
-                    return i;
-                }
+            if (x.belegtDurchFahrzeug == null) {
+                i++;
+                continue;
+            }
+            if ((b.getKennzeichen().equals(x.belegtDurchFahrzeug.getKennzeichen()))) {
+                return i;
             }
             i++;
 
