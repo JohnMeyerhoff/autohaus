@@ -6,6 +6,12 @@
         "howardzuo.vscode-favorites",
         "yzhang.markdown-all-in-one",
         "sdras.night-owl",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "albert.tabout",
+        "ms-vscode.atom-keybindings",
+        "lkytal.flatui",
+        "mhutchie.git-graph",
+        "grzegorzjudas.vscode-gitbuild",
+        "sonarsource.sonarlint-vscode"
     ]
 }
