@@ -10,7 +10,8 @@ import fahzeug.Fahrzeug;
 import fahzeug.Zweirad;
 
 public class FahrzeugTest {
-   
+   //Deklarationen
+
     Auto b;
     Auto c;
     Auto e;
@@ -19,7 +20,7 @@ public class FahrzeugTest {
     Fahrzeug l;
 
     @BeforeEach
-    void before(){
+    void erzeugeFahrzeuge(){
         b = new Auto("BN OP 1");
         d = new Zweirad("BN OP 3");
         w = new Fahrzeug("BN OP 4");
