@@ -28,15 +28,16 @@ public class App {
         ph.einparken(blauerOpel);
         ph1.einparken(moped);
 
-        System.out.println("Parkhaus 1:");
-        System.out.println(ph);
+        
         ph.woIstFahrzeug(blauerOpel);
 
         ph.einparken(blauerOpel);
         ph.einparken(blauerOpel);
         ph.einparken(blauerOpel);
+        System.out.println("Parkhaus 1:");
+        System.out.println(ph);
 
-        String[] out = ParkdeckHelper.parkDeckToArray(pd01);
+        String[] out = ParkdeckHelper.parkDeckGeradeToArray(pd01);
         for (String o : out) {
             System.out.println(o);
         }

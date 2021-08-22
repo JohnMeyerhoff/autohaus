@@ -8,11 +8,11 @@ public class ParkdeckHelper {
         int x = 0;
         for (Parkplatz<T> pp : pd) {
             if (pp.belegtDurchFahrzeug != null) {
-                res[x] = "HB: " + pp.belegtDurchFahrzeug.getHatBehindertenAusweis() + " "
+                res[x] = x+ " HB: " + pp.belegtDurchFahrzeug.getHatBehindertenAusweis() + " "
                         + pp.belegtDurchFahrzeug.toString();
                 // HB: hat behindertenausweis
             } else {
-                res[x] = "leer";
+                res[x] = x + ": leer";
             }
             x++;
         }
@@ -33,6 +33,16 @@ public class ParkdeckHelper {
         return links;
     }
     
-    public static <T extends Fahrzeug> String[] parkDeckUngeradeToArray(Parkdeck<T> pd) {
+    public static <T extends Fahrzeug> String[] parkDeckUngeradeToArray(Parkdeck<T> x) {
+        String[] alle = parkDeckToArray(x);
+        int laenge =  (alle.length%2 == 0) ? alle.length/2: ((alle.length)/2) + 1;
+        String[] rechts = new String[laenge];
+        int i = 1;
+        for (int f = 0; i <= alle.length; f++) {
+            rechts[f] = alle[i];
+            i = i + 2;
+        }
+        return rechts;
     }
+    
 }
