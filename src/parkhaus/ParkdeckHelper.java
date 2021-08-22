@@ -26,7 +26,7 @@ public class ParkdeckHelper {
         //die geraden Parkplätze enthält
        
         int i = 0;
-        for( int f = 0; i < alle.length;f++){
+        for( int f = 0; f < links.length;f++){
             links[f] = alle[i];
             i = i + 2;
         }
@@ -37,10 +37,10 @@ public class ParkdeckHelper {
         String[] alle = parkDeckToArray(x);
         int laenge =  (alle.length%2 == 0) ? alle.length/2: ((alle.length)/2) + 1;
         String[] rechts = new String[laenge];
-        int i = 1;
-        for (int f = 0; i <= alle.length; f++) {
+        int f = 0;
+        for (int i = 1; i <= alle.length; i = i +2) {
             rechts[f] = alle[i];
-            i = i + 2;
+            f++;
         }
         return rechts;
     }
