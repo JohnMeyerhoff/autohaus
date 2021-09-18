@@ -41,6 +41,7 @@ public class App {
         for (String o : out) {
             System.out.println(o);
         }
+        System.out.println(pd01.pPlatz(500));
     }
 
 }

@@ -24,12 +24,25 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
      * "damit jedes Fahrzeug der Klasse einparken dar, welches als Parameter
      * übergeben wurde."
      */
+    
     Parkplatz<T>[] parkflaeche;
-    int capacity = 30;
+    int capacity;// = 30;
     int size = 0;
+
+
+    @SuppressWarnings("unchecked")
+    public Parkdeck(int zahl) {
+        zahl = 30;
+        this.capacity = zahl;
+        this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[zahl];
+        for (int i = 0; i < this.parkflaeche.length; i++) {
+            this.parkflaeche[i] = new Parkplatz<>();
+        }
+    }
 
     @SuppressWarnings("unchecked")
     public Parkdeck() {
+        this.capacity = 30;
         this.parkflaeche = (Parkplatz<T>[]) new Parkplatz[30];
         for (int i = 0; i < this.parkflaeche.length; i++) {
             this.parkflaeche[i] = new Parkplatz<>();
@@ -37,7 +50,7 @@ public class Parkdeck<T extends Fahrzeug> implements Iterable<Parkplatz<T>> {
     }
 
     public Fahrzeug pPlatz(int platznummer) {
-        return (parkflaeche[platznummer] != null) ? parkflaeche[platznummer].belegtDurchFahrzeug : null;
+        return (platznummer < capacity) ? parkflaeche[platznummer].belegtDurchFahrzeug : null;
     }
 
     public boolean einparken(T einparker) {
